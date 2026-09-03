@@ -680,7 +680,7 @@ body {
 /* Sacred Rotating Mandala Wheel Arching Behind Puja Offerings */
 .hero-bottom-wheel {
   position: absolute;
-  bottom: -155px;
+  bottom: -105px;
   left: 50%;
   transform: translateX(-50%);
   width: 320px;
