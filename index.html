@@ -179,10 +179,17 @@
               <img src="assets/images/mooshak-frame.png" alt="Mooshak Holding Sacred Mirror" class="mooshak-frame-img"
                 width="682" height="1024">
 
-              <!-- Interactive Mirror Button -->
-              <button class="camera-toggle-btn" id="cameraToggleBtn" type="button" title="Open front camera mirror">
-                <span class="camera-btn-icon">📷</span> <span id="cameraBtnLabel">See Yourself</span>
-              </button>
+              <!-- Interactive Mirror & Flip Camera Controls -->
+              <div class="camera-controls-cluster">
+                <button class="camera-toggle-btn" id="cameraToggleBtn" type="button" title="Open camera mirror">
+                  <span class="camera-btn-icon">📷</span> <span id="cameraBtnLabel">See Yourself</span>
+                </button>
+                <button class="camera-flip-btn" id="cameraFlipBtn" type="button" title="Flip Camera" aria-label="Flip Camera">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                    <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/>
+                  </svg>
+                </button>
+              </div>
             </div>
 
             <h2 class="family-title">You are Invited</h2>

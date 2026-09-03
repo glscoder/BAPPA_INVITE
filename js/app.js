@@ -245,27 +245,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Mooshak Live Selfie Mirror Camera Integration ---
+  // --- Mooshak Live Selfie Mirror & Backflip Camera Integration ---
   const cameraVideo = document.getElementById("selfieCameraVideo");
   const cameraFallback = document.getElementById("cameraFallback");
   const cameraToggleBtn = document.getElementById("cameraToggleBtn");
+  const cameraFlipBtn = document.getElementById("cameraFlipBtn");
   const cameraBtnLabel = document.getElementById("cameraBtnLabel");
   const welcomeSection = document.getElementById("welcomeSection");
   let cameraStream = null;
   let isCameraStarting = false;
+  let currentFacingMode = "user"; // "user" (front) or "environment" (back)
 
-  async function startSelfieCamera() {
-    if (cameraStream || isCameraStarting) return;
+  async function startSelfieCamera(facingMode = currentFacingMode) {
+    if (cameraStream) {
+      cameraStream.getTracks().forEach((track) => track.stop());
+      cameraStream = null;
+    }
+    if (isCameraStarting) return;
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       console.log("Camera API not supported on this browser.");
       return;
     }
 
     isCameraStarting = true;
+    currentFacingMode = facingMode;
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
         video: {
-          facingMode: "user",
+          facingMode: { ideal: facingMode },
           width: { ideal: 480 },
           height: { ideal: 480 }
         },
@@ -277,11 +284,16 @@ document.addEventListener("DOMContentLoaded", () => {
         cameraVideo.srcObject = stream;
         await cameraVideo.play();
         cameraVideo.classList.add("active");
+        if (facingMode === "environment") {
+          cameraVideo.classList.add("back-facing");
+        } else {
+          cameraVideo.classList.remove("back-facing");
+        }
         if (cameraFallback) cameraFallback.style.display = "none";
-        if (cameraBtnLabel) cameraBtnLabel.textContent = "Mirror Active ✨";
+        if (cameraBtnLabel) cameraBtnLabel.textContent = "Camera On ✨";
       }
     } catch (err) {
-      console.warn("Front camera access was declined or unavailable:", err);
+      console.warn("Camera access was declined or unavailable:", err);
       if (cameraBtnLabel) cameraBtnLabel.textContent = "Enable Mirror";
     } finally {
       isCameraStarting = false;
@@ -294,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cameraStream = null;
     }
     if (cameraVideo) {
-      cameraVideo.classList.remove("active");
+      cameraVideo.classList.remove("active", "back-facing");
       cameraVideo.srcObject = null;
     }
     if (cameraFallback) {
@@ -310,14 +322,21 @@ document.addEventListener("DOMContentLoaded", () => {
       if (cameraStream) {
         stopSelfieCamera();
       } else {
-        startSelfieCamera();
+        startSelfieCamera(currentFacingMode);
       }
+    });
+  }
+
+  if (cameraFlipBtn) {
+    cameraFlipBtn.addEventListener("click", () => {
+      const nextMode = currentFacingMode === "user" ? "environment" : "user";
+      startSelfieCamera(nextMode);
     });
   }
 
   if (cameraFallback) {
     cameraFallback.addEventListener("click", () => {
-      startSelfieCamera();
+      startSelfieCamera(currentFacingMode);
     });
   }
 
@@ -330,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const inView = welcomeRect.top < window.innerHeight * 0.7 && welcomeRect.bottom > window.innerHeight * 0.3;
       if (inView && !hasAttemptedAutoStart) {
         hasAttemptedAutoStart = true;
-        startSelfieCamera();
+        startSelfieCamera("user");
       }
     }, { passive: true });
   }
