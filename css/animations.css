@@ -452,81 +452,67 @@
   }
 }
 
-/* Staggered Theatrical Execution */
+/* Fast & Crisp Theatrical Reveal (Complete within ~1.2s as doors open) */
 .doors-opened .hero-marigold-toran,
 .temple-curtain.opened ~ .scroll-viewport #heroSection .hero-marigold-toran {
-  animation: toranGrandEntrance 1.2s cubic-bezier(0.2, 0.9, 0.3, 1) 0.6s both;
+  animation: toranGrandEntrance 0.6s cubic-bezier(0.2, 0.9, 0.3, 1) 0.1s both;
   pointer-events: none;
-}
-
-.doors-opened .hero-shloka-header,
-.temple-curtain.opened ~ .scroll-viewport #heroSection .hero-shloka-header {
-  animation: sacredShlokaReveal 1.0s cubic-bezier(0.2, 0.9, 0.3, 1) 1.2s both;
 }
 
 .doors-opened .hero-hang-left,
 .temple-curtain.opened ~ .scroll-viewport #heroSection .hero-hang-left {
-  animation: vaseLeftGrandEntrance 1.1s cubic-bezier(0.16, 1, 0.3, 1) 1.8s both;
+  animation: vaseLeftGrandEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
 .doors-opened .hero-hang-right,
 .temple-curtain.opened ~ .scroll-viewport #heroSection .hero-hang-right {
-  animation: vaseRightGrandEntrance 1.1s cubic-bezier(0.16, 1, 0.3, 1) 1.8s both;
-}
-
-.doors-opened .ganesha-divine-aura,
-.temple-curtain.opened ~ .scroll-viewport #heroSection .ganesha-divine-aura {
-  animation: divineAuraManifest 1.4s ease-out 2.4s both, divineAuraMovingDrift 11s infinite ease-in-out 3.8s;
-}
-
-.doors-opened .ganesha-floating-glow,
-.temple-curtain.opened ~ .scroll-viewport #heroSection .ganesha-floating-glow {
-  animation: divineAuraManifest 1.2s ease-out 2.6s both, floatingGoldenLightOrb 8s infinite ease-in-out alternate 3.8s;
-}
-
-.doors-opened .ganesha-hero-stage,
-.temple-curtain.opened ~ .scroll-viewport #heroSection .ganesha-hero-stage {
-  animation: ganeshaDivineManifestation 1.4s cubic-bezier(0.22, 1, 0.36, 1) 2.5s both;
-}
-
-.doors-opened .calligraphy-title,
-.temple-curtain.opened ~ .scroll-viewport #heroSection .calligraphy-title {
-  animation: titleCinematicExpand 1.0s cubic-bezier(0.2, 0.9, 0.3, 1) 3.6s both;
-}
-
-.doors-opened .hindi-tagline,
-.temple-curtain.opened ~ .scroll-viewport #heroSection .hindi-tagline {
-  animation: hindiTaglineGrandEntrance 0.9s cubic-bezier(0.2, 0.9, 0.3, 1) 4.3s both;
-}
-
-.doors-opened .namaste-divider,
-.temple-curtain.opened ~ .scroll-viewport #heroSection .namaste-divider {
-  animation: namastePranamEntrance 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) 4.9s both;
-}
-
-.doors-opened .event-date-badge,
-.temple-curtain.opened ~ .scroll-viewport #heroSection .event-date-badge {
-  animation: statelyBadgeEntrance 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) 5.4s both;
-}
-
-.doors-opened .event-time-badge,
-.temple-curtain.opened ~ .scroll-viewport #heroSection .event-time-badge {
-  animation: statelyBadgeEntrance 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) 5.9s both;
+  animation: vaseRightGrandEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
 .doors-opened .hero-bottom-puja,
 .temple-curtain.opened ~ .scroll-viewport #heroSection .hero-bottom-puja {
-  animation: hedgeBloomEntrance 0.9s cubic-bezier(0.2, 0.9, 0.3, 1) 6.4s both;
+  animation: hedgeBloomEntrance 0.6s cubic-bezier(0.2, 0.9, 0.3, 1) 0.2s both;
 }
 
-.doors-opened .mooshak-running-track,
-.temple-curtain.opened ~ .scroll-viewport #heroSection .mooshak-running-track {
-  animation: joyfulEntrance 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) 6.9s both;
+.doors-opened .hero-shloka-header,
+.temple-curtain.opened ~ .scroll-viewport #heroSection .hero-shloka-header {
+  animation: sacredShlokaReveal 0.6s cubic-bezier(0.2, 0.9, 0.3, 1) 0.25s both;
 }
 
+.doors-opened .ganesha-divine-aura,
+.temple-curtain.opened ~ .scroll-viewport #heroSection .ganesha-divine-aura {
+  animation: divineAuraManifest 0.8s ease-out 0.35s both, divineAuraMovingDrift 11s infinite ease-in-out 1.2s;
+}
+
+.doors-opened .ganesha-floating-glow,
+.temple-curtain.opened ~ .scroll-viewport #heroSection .ganesha-floating-glow {
+  animation: divineAuraManifest 0.7s ease-out 0.4s both, floatingGoldenLightOrb 8s infinite ease-in-out alternate 1.2s;
+}
+
+.doors-opened .ganesha-hero-stage,
+.temple-curtain.opened ~ .scroll-viewport #heroSection .ganesha-hero-stage {
+  animation: ganeshaDivineManifestation 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
+.doors-opened .calligraphy-title,
+.temple-curtain.opened ~ .scroll-viewport #heroSection .calligraphy-title {
+  animation: titleCinematicExpand 0.6s cubic-bezier(0.2, 0.9, 0.3, 1) 0.65s both;
+}
+
+.doors-opened .hindi-tagline,
+.temple-curtain.opened ~ .scroll-viewport #heroSection .hindi-tagline {
+  animation: hindiTaglineGrandEntrance 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) 0.75s both;
+}
+
+.doors-opened .hero-date-capsule,
+.temple-curtain.opened ~ .scroll-viewport #heroSection .hero-date-capsule,
+.doors-opened .event-date-badge,
+.temple-curtain.opened ~ .scroll-viewport #heroSection .event-date-badge,
+.doors-opened .event-time-badge,
+.temple-curtain.opened ~ .scroll-viewport #heroSection .event-time-badge,
 .doors-opened .scroll-prompt,
 .temple-curtain.opened ~ .scroll-viewport #heroSection .scroll-prompt {
-  animation: joyfulEntrance 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) 7.3s both;
+  animation: statelyBadgeEntrance 0.6s cubic-bezier(0.2, 0.9, 0.3, 1) 0.85s both;
 }
 
 /* Respect User Reduced Motion Preference */
