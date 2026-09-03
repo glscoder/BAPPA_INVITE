@@ -438,15 +438,15 @@ body {
 
 /* Sanskrit Shloka at top */
 .hero-shloka-header {
-  padding: clamp(50px, 8vh, 74px) 16px 0;
+  padding: clamp(55px, 8.5vh, 80px) 16px 0;
   z-index: 10;
   position: relative;
-  margin-bottom: 2px;
+  margin-bottom: clamp(6px, 1.2vh, 12px);
 }
 
 .shloka-ornament-top {
   font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-size: clamp(0.72rem, 1.6vh, 0.82rem);
   font-weight: 700;
   letter-spacing: 1.5px;
   color: #C2780A;
@@ -456,8 +456,8 @@ body {
 
 .shloka-sanskrit-top {
   font-family: var(--font-heading);
-  font-size: 0.88rem;
-  line-height: 1.4;
+  font-size: clamp(0.88rem, 2vh, 1.02rem);
+  line-height: 1.42;
   color: var(--color-terracotta);
   letter-spacing: 0.4px;
 }
@@ -465,7 +465,7 @@ body {
 .shloka-underline-filigree {
   width: 130px;
   height: 1.5px;
-  margin: 3px auto 0;
+  margin: 4px auto 0;
   background: linear-gradient(90deg, transparent 0%, #D97706 50%, transparent 100%);
   border-radius: 2px;
   opacity: 0.6;
@@ -475,9 +475,9 @@ body {
 .hero-side-hang {
   position: absolute;
   top: 0;
-  width: 58px;
-  height: 410px;
-  max-height: 56vh;
+  width: clamp(48px, 11vw, 62px);
+  height: clamp(330px, 48vh, 430px);
+  max-height: 58vh;
   z-index: 12;
   pointer-events: none;
   filter: drop-shadow(0 6px 14px rgba(123, 30, 16, 0.2));
@@ -486,11 +486,11 @@ body {
 }
 
 .hero-hang-left {
-  left: 20px;
+  left: clamp(10px, 3vw, 20px);
 }
 
 .hero-hang-right {
-  right: 20px;
+  right: clamp(10px, 3vw, 20px);
 }
 
 .hero-side-hang img {
@@ -503,15 +503,15 @@ body {
 
 /* Traditional Ganesha Centerpiece Stage */
 .ganesha-hero-stage {
-  width: clamp(120px, 18vh, 160px);
-  height: clamp(120px, 18vh, 160px);
-  margin: clamp(2px, 0.5vh, 6px) auto 0;
+  width: clamp(145px, 21vh, 185px);
+  height: clamp(145px, 21vh, 185px);
+  margin: clamp(6px, 1.2vh, 14px) auto clamp(8px, 1.5vh, 16px);
   position: relative;
   z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0 8px 18px rgba(123, 30, 16, 0.15));
+  filter: drop-shadow(0 8px 22px rgba(123, 30, 16, 0.18));
 }
 
 .ganesha-divine-aura {
@@ -519,8 +519,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 230px;
-  height: 230px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 193, 7, 0.55) 0%, rgba(245, 158, 11, 0.3) 45%, transparent 72%);
   pointer-events: none;
@@ -534,8 +534,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 223, 0, 0.7) 0%, rgba(255, 160, 0, 0.4) 45%, transparent 70%);
   pointer-events: none;
@@ -554,24 +554,25 @@ body {
 
 /* Host & Event Headings */
 .hero-invite-header {
-  padding: 2px 10px 0;
+  padding: 0 10px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 /* Regal Announcement Title: BAPPA'S COMING HOME */
 .calligraphy-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 3.2vh, 1.45rem);
+  font-size: clamp(1.35rem, 3.4vh, 1.65rem);
   font-weight: 900;
   -webkit-text-stroke: 0.35px var(--color-green);
   line-height: 1.18;
   color: var(--color-green);
-  letter-spacing: clamp(1px, 0.4vw, 2px);
+  letter-spacing: clamp(1.2px, 0.4vw, 2px);
   text-transform: uppercase;
-  margin: clamp(2px, 0.5vh, 5px) 0 2px;
+  margin: clamp(4px, 0.8vh, 8px) 0 clamp(2px, 0.4vh, 4px);
   padding: 0 10px;
   text-shadow: 0 2px 4px rgba(35, 107, 67, 0.18), 0 0 12px rgba(245, 158, 11, 0.15);
   white-space: nowrap;
@@ -580,12 +581,12 @@ body {
 /* Sacred Hindi Tagline: ॥ बाप्पा घर आ रहे हैं ॥ */
 .hindi-tagline {
   font-family: var(--font-heading);
-  font-size: clamp(1.05rem, 2.6vh, 1.35rem);
+  font-size: clamp(1.15rem, 2.8vh, 1.45rem);
   line-height: 1.25;
   color: #8B1E0F;
   letter-spacing: 1.2px;
   font-weight: 700;
-  margin: 1px 0 clamp(2px, 0.6vh, 6px);
+  margin: clamp(2px, 0.4vh, 4px) 0 clamp(10px, 1.8vh, 18px);
   text-shadow: 0 1px 3px rgba(139, 30, 15, 0.16);
 }
 
@@ -595,29 +596,30 @@ body {
   flex-direction: column;
   align-items: center;
   background: linear-gradient(135deg, rgba(255, 253, 246, 0.96) 0%, rgba(254, 243, 199, 0.78) 100%);
-  border: 1px solid rgba(217, 119, 6, 0.35);
-  border-radius: 14px;
-  padding: clamp(3px, 0.7vh, 6px) clamp(10px, 2.5vw, 16px);
-  margin-top: clamp(1px, 0.4vh, 3px);
-  box-shadow: 0 3px 12px rgba(123, 30, 16, 0.07), inset 0 0 10px rgba(245, 158, 11, 0.07);
-  max-width: 94%;
+  border: 1.2px solid rgba(217, 119, 6, 0.38);
+  border-radius: 18px;
+  padding: clamp(8px, 1.2vh, 12px) clamp(16px, 4vw, 24px);
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(123, 30, 16, 0.08), inset 0 0 12px rgba(245, 158, 11, 0.08);
+  width: 90%;
+  max-width: 370px;
   cursor: pointer;
   transition: all 0.25s ease;
 }
 
 .hero-date-capsule:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(123, 30, 16, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(123, 30, 16, 0.14);
 }
 
 .event-date-badge {
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: clamp(0.82rem, 1.8vh, 0.94rem);
   font-weight: 700;
   color: var(--color-terracotta);
   letter-spacing: 1.1px;
   text-transform: uppercase;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   padding: 0 6px;
   max-width: 100%;
   text-align: center;
@@ -633,7 +635,7 @@ body {
   max-width: 96%;
   margin: 0 auto;
   font-family: var(--font-body);
-  font-size: 0.68rem;
+  font-size: clamp(0.72rem, 1.5vh, 0.80rem);
   font-weight: 600;
   color: #9C3D28;
   letter-spacing: 0.5px;
