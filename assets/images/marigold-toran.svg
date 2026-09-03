@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" width="100%" height="100%">
+  <defs>
+    <!-- Marigold Orange Radial -->
+    <radialGradient id="mgOrange" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF5400" />
+      <stop offset="60%" stop-color="#FF7A00" />
+      <stop offset="100%" stop-color="#C73E00" />
+    </radialGradient>
+    <!-- Marigold Yellow Radial -->
+    <radialGradient id="mgYellow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFEA00" />
+      <stop offset="65%" stop-color="#FFB703" />
+      <stop offset="100%" stop-color="#FB8500" />
+    </radialGradient>
+    <!-- Mango Leaf Gradient -->
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D6A4F" />
+      <stop offset="60%" stop-color="#40916C" />
+      <stop offset="100%" stop-color="#1B4332" />
+    </linearGradient>
+
+    <!-- Single Marigold Flower Symbol -->
+    <g id="flower-orange">
+      <circle cx="0" cy="0" r="11" fill="url(#mgOrange)" stroke="#B33900" stroke-width="0.8" />
+      <circle cx="0" cy="0" r="8" fill="#FF8500" />
+      <circle cx="0" cy="0" r="5" fill="#FFAA00" />
+      <circle cx="0" cy="0" r="2.5" fill="#D00000" />
+    </g>
+    <g id="flower-yellow">
+      <circle cx="0" cy="0" r="11" fill="url(#mgYellow)" stroke="#D47A00" stroke-width="0.8" />
+      <circle cx="0" cy="0" r="8" fill="#FFD000" />
+      <circle cx="0" cy="0" r="5" fill="#FFE066" />
+      <circle cx="0" cy="0" r="2.5" fill="#E85D04" />
+    </g>
+
+    <!-- Mango Leaf Tassel -->
+    <g id="leaf-tassel">
+      <path d="M0 0 C-4 10 -6 20 0 32 C6 20 4 10 0 0 Z" fill="url(#leafGrad)" stroke="#1B4332" stroke-width="0.6" />
+      <path d="M-6 4 C-12 14 -10 24 -4 30 C0 22 -2 12 -6 4 Z" fill="url(#leafGrad)" stroke="#1B4332" stroke-width="0.6" />
+      <path d="M6 4 C12 14 10 24 4 30 C0 22 2 12 6 4 Z" fill="url(#leafGrad)" stroke="#1B4332" stroke-width="0.6" />
+    </g>
+  </defs>
+
+  <!-- Hanging Strand 1 (Far Left) -->
+  <g transform="translate(30, 0)">
+    <use href="#flower-orange" x="0" y="8" />
+    <use href="#flower-yellow" x="0" y="26" />
+    <use href="#flower-orange" x="0" y="44" />
+    <use href="#flower-yellow" x="0" y="62" />
+    <use href="#flower-orange" x="0" y="80" />
+    <use href="#leaf-tassel" x="0" y="88" />
+  </g>
+
+  <!-- Hanging Strand 2 -->
+  <g transform="translate(100, 0)">
+    <use href="#flower-yellow" x="0" y="8" />
+    <use href="#flower-orange" x="0" y="26" />
+    <use href="#flower-yellow" x="0" y="44" />
+    <use href="#flower-orange" x="0" y="62" />
+    <use href="#leaf-tassel" x="0" y="70" />
+  </g>
+
+  <!-- Hanging Strand 3 (Left-Center) -->
+  <g transform="translate(170, 0)">
+    <use href="#flower-orange" x="0" y="8" />
+    <use href="#flower-yellow" x="0" y="26" />
+    <use href="#flower-orange" x="0" y="44" />
+    <use href="#leaf-tassel" x="0" y="52" />
+  </g>
+
+  <!-- Hanging Strand 4 (Right-Center) -->
+  <g transform="translate(330, 0)">
+    <use href="#flower-orange" x="0" y="8" />
+    <use href="#flower-yellow" x="0" y="26" />
+    <use href="#flower-orange" x="0" y="44" />
+    <use href="#leaf-tassel" x="0" y="52" />
+  </g>
+
+  <!-- Hanging Strand 5 -->
+  <g transform="translate(400, 0)">
+    <use href="#flower-yellow" x="0" y="8" />
+    <use href="#flower-orange" x="0" y="26" />
+    <use href="#flower-yellow" x="0" y="44" />
+    <use href="#flower-orange" x="0" y="62" />
+    <use href="#leaf-tassel" x="0" y="70" />
+  </g>
+
+  <!-- Hanging Strand 6 (Far Right) -->
+  <g transform="translate(470, 0)">
+    <use href="#flower-orange" x="0" y="8" />
+    <use href="#flower-yellow" x="0" y="26" />
+    <use href="#flower-orange" x="0" y="44" />
+    <use href="#flower-yellow" x="0" y="62" />
+    <use href="#flower-orange" x="0" y="80" />
+    <use href="#leaf-tassel" x="0" y="88" />
+  </g>
+</svg>

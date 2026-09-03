@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="modakGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB" />
+      <stop offset="35%" stop-color="#FEF08A" />
+      <stop offset="70%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <filter id="modakGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#78350F" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#modakGlow)">
+    <!-- Base Modak Shape -->
+    <path d="M50 10 C42 30 20 50 20 72 C20 86 35 92 50 92 C65 92 80 86 80 72 C80 50 58 30 50 10 Z" fill="url(#modakGrad)" stroke="#B45309" stroke-width="1.5" />
+    
+    <!-- Traditional Pleats / Petal ridges (Kali) -->
+    <path d="M50 10 C46 38 42 65 38 90" fill="none" stroke="#D97706" stroke-width="1.8" opacity="0.85" />
+    <path d="M50 10 C54 38 58 65 62 90" fill="none" stroke="#D97706" stroke-width="1.8" opacity="0.85" />
+    <path d="M50 10 C50 40 50 68 50 92" fill="none" stroke="#FEF08A" stroke-width="2" opacity="0.9" />
+    <path d="M50 10 C38 40 28 62 26 78" fill="none" stroke="#B45309" stroke-width="1.5" opacity="0.7" />
+    <path d="M50 10 C62 40 72 62 74 78" fill="none" stroke="#B45309" stroke-width="1.5" opacity="0.7" />
+    
+    <!-- Saffron / Kesar Strand on top -->
+    <path d="M50 12 Q53 7 50 4" stroke="#DC2626" stroke-width="2" stroke-linecap="round" fill="none" />
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bananaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D6A4F" />
+      <stop offset="40%" stop-color="#52B788" />
+      <stop offset="80%" stop-color="#74C69D" />
+      <stop offset="100%" stop-color="#1B4332" />
+    </linearGradient>
+    <linearGradient id="lotusGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#E85D04" />
+      <stop offset="50%" stop-color="#F48C06" />
+      <stop offset="100%" stop-color="#FAA307" />
+    </linearGradient>
+  </defs>
+
+  <!-- Large Banana Leaf curving from left -->
+  <g transform="translate(-20, 20)">
+    <path d="M0 60 C30 20 85 40 100 120 C110 180 80 230 0 250 Z" fill="url(#bananaGrad)" stroke="#1B4332" stroke-width="1.2" />
+    <!-- Leaf midrib -->
+    <path d="M0 60 C40 90 70 140 85 220" fill="none" stroke="#D8F3DC" stroke-width="2.5" opacity="0.8" />
+    <!-- Leaf veins -->
+    <path d="M25 85 Q50 80 80 75" fill="none" stroke="#D8F3DC" stroke-width="1" opacity="0.5" />
+    <path d="M40 115 Q65 110 95 105" fill="none" stroke="#D8F3DC" stroke-width="1" opacity="0.5" />
+    <path d="M55 145 Q80 145 98 140" fill="none" stroke="#D8F3DC" stroke-width="1" opacity="0.5" />
+    <path d="M65 175 Q85 180 92 180" fill="none" stroke="#D8F3DC" stroke-width="1" opacity="0.5" />
+  </g>
+
+  <!-- Orange Lotus Flower in front -->
+  <g transform="translate(10, 180)">
+    <!-- Base leaves -->
+    <path d="M5 25 C15 35 35 35 45 25 C30 30 15 30 5 25 Z" fill="#2D6A4F" />
+    <!-- Outer petals -->
+    <path d="M5 20 C12 2 24 0 25 15 C20 18 10 20 5 20 Z" fill="url(#lotusGrad)" stroke="#9D0208" stroke-width="0.8" />
+    <path d="M45 20 C38 2 26 0 25 15 C30 18 40 20 45 20 Z" fill="url(#lotusGrad)" stroke="#9D0208" stroke-width="0.8" />
+    <!-- Inner petals -->
+    <path d="M12 18 C18 6 25 2 25 15 C20 18 14 18 12 18 Z" fill="#FFBA08" />
+    <path d="M38 18 C32 6 25 2 25 15 C30 18 36 18 38 18 Z" fill="#FFBA08" />
+    <!-- Center bud -->
+    <path d="M25 0 C21 8 20 16 25 20 C30 16 29 8 25 0 Z" fill="#FAA307" stroke="#DC2F02" stroke-width="0.8" />
+  </g>
+</svg>

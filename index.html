@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>|| श्री गणेशाय नमः || Ganesh Darshan Digital Invitation | The Shah Family</title>
+
+  <!-- SEO & Social Sharing (WhatsApp, Instagram, iMessage unfurls) -->
+  <meta name="description"
+    content="With the divine blessings of Lord Ganesha, we cordially invite you and your family for Ganesh Darshan. Ganpati Bappa Morya!">
+  <meta name="keywords"
+    content="Ganesh Darshan, Ganesh Chaturthi, Ganpati Invitation, Digital Card, Bappa Morya, Indian Festive Invitation">
+  <meta name="author" content="The Shah Family">
+  <meta name="theme-color" content="#FAF3E6">
+
+  <!-- Open Graph / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="|| श्री गणेशाय नमः || Ganesh Darshan Invitation">
+  <meta property="og:description"
+    content="With the divine blessings of Lord Ganesha, we warmly invite you and your family for Ganesh Darshan. Tap to open your invitation.">
+  <meta property="og:image" content="assets/images/og-preview.png">
+  <meta property="og:url" content="./">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="|| श्री गणेशाय नमः || Ganesh Darshan Invitation">
+  <meta name="twitter:description"
+    content="Join our Ganesh Darshan celebration. View darshan timings, aarti schedule, and location.">
+  <meta name="twitter:image" content="assets/images/og-preview.png">
+
+  <!-- Premium Typography (Marcellus, Playfair Display Bold/Heavy, Cinzel Decorative, Rozha One, Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Marcellus&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&family=Rozha+One&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+
+  <!-- Ambient Marigold Petals & Golden Stardust Canvas -->
+  <canvas id="petalsCanvas"></canvas>
+
+  <!-- 9:16 Responsive Device Wrapper -->
+  <main class="viewport-stage">
+    <div class="mobile-frame" id="invitationContainer">
+
+      <!-- Floating Sacred Music Toggle Button -->
+      <button class="floating-audio-btn" id="audioToggleBtn" title="Toggle Sacred Music"
+        aria-label="Toggle devotional music">
+        <img src="assets/images/bell.svg" alt="Devotional Bell" width="24" height="24">
+      </button>
+
+      <!-- 3D Temple Doors Parting Curtain -->
+      <div class="temple-curtain" id="doorCurtain" role="dialog" aria-label="Temple entrance doors">
+
+        <div class="door-panel door-left">
+          <img src="assets/images/bells.png" alt="Hanging Brass Temple Bell" class="door-hanging-bell">
+        </div>
+
+        <div class="door-panel door-right">
+          <img src="assets/images/bells.png" alt="Hanging Brass Temple Bell" class="door-hanging-bell">
+        </div>
+
+        <!-- Mooshak Door Guide & Tap Prompt -->
+        <div class="door-mooshak-guide" id="openInviteBtn" role="button" tabindex="0" aria-label="Tap anywhere on door to enter">
+          <img src="assets/images/mooshak-door-guide.png" alt="Mooshak - Tap Anywhere on Door" class="mooshak-door-img" width="400" height="600">
+        </div>
+      </div>
+
+      <!-- Scroll-Snapped Invitation Pages -->
+      <div class="scroll-viewport" id="scrollViewport">
+
+        <!-- ================= PAGE 1: HERO REVEAL (MATCHING REFERENCE IMAGE) ================= -->
+        <section class="invitation-page hero-section" id="heroSection">
+          <!-- Festive Golden Backlight Halo -->
+          <div class="hero-sanctum-glow" aria-hidden="true"></div>
+
+          <!-- Hanging Ornaments from Top on Both Sides -->
+          <div class="hero-side-hang hero-hang-left" aria-hidden="true">
+            <img src="assets/images/hang-left.png" alt="Sacred Hanging Ornament Left">
+          </div>
+          <div class="hero-side-hang hero-hang-right" aria-hidden="true">
+            <img src="assets/images/hang-right.png" alt="Sacred Hanging Ornament Right">
+          </div>
+
+          <!-- Hanging Marigold Garlands Toran at Top -->
+          <div class="hero-marigold-toran">
+            <img src="assets/images/marigold-toran.svg" alt="Marigold Garlands" width="100%">
+          </div>
+
+          <!-- Auspicious Sanskrit Shloka at Top -->
+          <div class="hero-shloka-header">
+            <div class="shloka-ornament-top">❖ || श्री गणेशाय नमः || ❖</div>
+            <div class="shloka-sanskrit-top">
+              वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br>
+              निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
+            </div>
+            <div class="shloka-underline-filigree" aria-hidden="true"></div>
+          </div>
+
+          <!-- Centerpiece Stage: Lord Ganesha -->
+          <div class="ganesha-hero-stage">
+            <div class="ganesha-divine-aura" aria-hidden="true"></div>
+            <div class="ganesha-floating-glow" aria-hidden="true"></div>
+            <img src="assets/images/ganesha-hero.png" alt="Lord Ganesha" class="ganesha-traditional-img">
+          </div>
+
+          <!-- Main Announcement Heading & Date Ribbon -->
+          <div class="hero-invite-header">
+            <h1 class="calligraphy-title">Bappa's Coming Home</h1>
+            <div class="hindi-tagline">॥ बाप्पा घर आ रहे हैं ॥</div>
+
+            <!-- Royal Event Date & Time Capsule with Integrated Scroll Indicator -->
+            <div class="hero-date-capsule" id="scrollPrompt">
+              <div class="event-date-badge">ON MONDAY, 14TH SEPTEMBER 2026</div>
+              <div class="event-time-badge">
+                <span class="badge-segment">AARTI — 7:30 PM ONWARDS</span>
+                <span class="badge-bullet">•</span>
+                <span class="badge-segment">FOLLOWED BY PRASAD</span>
+              </div>
+              <div class="capsule-scroll-hint">
+                <span>Scroll to View Full Schedule</span>
+                <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sacred Rotating Mandala Wheel at Bottom (Behind Puja Offerings) -->
+          <div class="hero-bottom-wheel" aria-hidden="true">
+            <img src="assets/images/mandala-brown.svg" alt="Sacred Mandala Wheel">
+          </div>
+
+          <!-- Bottom Traditional Puja Offerings Border (Modak, Diyas, Kalash, Fruits & Flowers) -->
+          <div class="hero-bottom-puja">
+            <img src="assets/images/puja-thali-border.png" alt="Sacred Puja Offerings" width="1024" height="379">
+          </div>
+        </section>
+
+        <!-- ================= PAGE 2: WELCOME & HOST ================= -->
+        <section class="invitation-page welcome-page-section" id="welcomeSection">
+          <div class="content-card welcome-card scroll-reveal">
+            <!-- Shloka Box -->
+            <div class="shloka-box">
+              <div class="sanskrit-verse">
+                ॐ गं गणपतये नमः
+              </div>
+              <div class="verse-english">
+                "May Lord Ganesha bestow joy, auspiciousness, peace, and good health upon you and your family."
+              </div>
+            </div>
+
+            <!-- Mooshak Personal Live Invitation Mirror (Front Camera Window) -->
+            <div class="mooshak-invitation-stage" id="mooshakStage">
+              <!-- Divine Aura Halo behind Mooshak -->
+              <div class="mooshak-halo-glow" aria-hidden="true"></div>
+
+              <!-- Live Video Stream Layer behind the frame -->
+              <div class="mooshak-camera-viewport" id="cameraViewport">
+                <video id="selfieCameraVideo" autoplay playsinline muted></video>
+                <div class="camera-fallback-placeholder" id="cameraFallback">
+                  <span class="camera-lens-icon">✨</span>
+                  <span class="camera-tap-hint">Tap For Live Mirror</span>
+                </div>
+              </div>
+
+              <!-- Foreground Mooshak Frame with Transparent Center Window -->
+              <img src="assets/images/mooshak-frame.png" alt="Mooshak Holding Sacred Mirror" class="mooshak-frame-img"
+                width="682" height="1024">
+
+              <!-- Interactive Mirror Button -->
+              <button class="camera-toggle-btn" id="cameraToggleBtn" type="button" title="Open front camera mirror">
+                <span class="camera-btn-icon">📷</span> <span id="cameraBtnLabel">See Yourself</span>
+              </button>
+            </div>
+
+            <h2 class="family-title">You are Invited</h2>
+            <div class="welcome-card-divider" aria-hidden="true"></div>
+
+            <p class="invite-message">
+              We cordially invite you &amp; your family to grace our home and join us in celebrating Ganesh Utsav.
+            </p>
+            <p class="invite-message highlight-blessing">
+              With the supreme grace of <strong>Vighnaharta Lord Ganesha</strong>, your auspicious presence will double
+              our festive joy!
+            </p>
+          </div>
+
+          <!-- Rotating Brown Mandala Wheel at Bottom (30-35% Opacity) -->
+          <div class="welcome-bottom-wheel" aria-hidden="true">
+            <img src="assets/images/mandala-brown.svg" alt="Sacred Rotating Mandala Wheel">
+          </div>
+        </section>
+
+        <!-- ================= PAGE 3: DIVINE SCHEDULE ================= -->
+        <section class="invitation-page schedule-page-section" id="scheduleSection">
+          <!-- Section Header with Filigree -->
+          <div class="section-header-wrap scroll-reveal">
+            <div class="schedule-ornament-header">❖ || उत्सव रूपरेखा || ❖</div>
+            <div class="section-label">Auspicious Timings</div>
+            <h2 class="section-title">Utsav Schedule</h2>
+            <div class="schedule-title-filigree" aria-hidden="true"></div>
+          </div>
+
+          <div class="schedule-timeline-wrap">
+            <!-- Continuous Golden Connecting Timeline Spine -->
+            <div class="schedule-timeline-spine" aria-hidden="true"></div>
+
+            <div class="schedule-grid stagger-parent">
+              <!-- Event 1: Aagman & Sthapana -->
+              <div class="schedule-card scroll-reveal stagger-child">
+                <div class="schedule-icon-badge">
+                  <img src="assets/images/icon-aagman.svg" alt="Bappa's Aagman">
+                </div>
+                <div class="schedule-info">
+                  <div class="schedule-event-title">Bappa's Aagman &amp; Sthapana</div>
+                  <div class="schedule-date-ribbon">
+                    <span class="ribbon-text">Monday, September 14, 2026</span>
+                  </div>
+                  <div class="schedule-timing">
+                    <span class="timing-bullet">⬥</span> Murti Sthapana: 09:30 AM – 11:30 AM
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event 2: Maha Aarti -->
+              <div class="schedule-card scroll-reveal stagger-child">
+                <div class="schedule-icon-badge">
+                  <img src="assets/images/icon-aarti.svg" alt="Daily Maha Aarti">
+                </div>
+                <div class="schedule-info">
+                  <div class="schedule-event-title">Daily Maha Aarti</div>
+                  <div class="schedule-date-ribbon">
+                    <span class="ribbon-text">Every Day (Sept 14 – Sept 18)</span>
+                  </div>
+                  <div class="schedule-timing">
+                    <span class="timing-bullet">⬥</span> Morning: 8:00 AM | Evening: 7:30 PM
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event 3: Maha Prasad -->
+              <div class="schedule-card scroll-reveal stagger-child">
+                <div class="schedule-icon-badge">
+                  <img src="assets/images/icon-prasad.svg" alt="Modak Bhog &amp; Maha Prasad">
+                </div>
+                <div class="schedule-info">
+                  <div class="schedule-event-title">Modak Bhog &amp; Maha Prasad</div>
+                  <div class="schedule-date-ribbon">
+                    <span class="ribbon-text">Daily Post Evening Aarti</span>
+                  </div>
+                  <div class="schedule-timing">
+                    <span class="timing-bullet">⬥</span> Dinner Prasad: 8:30 PM Onwards
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event 4: Visarjan -->
+              <div class="schedule-card scroll-reveal stagger-child">
+                <div class="schedule-icon-badge">
+                  <img src="assets/images/icon-visarjan.svg" alt="Eco-Friendly Visarjan">
+                </div>
+                <div class="schedule-info">
+                  <div class="schedule-event-title">Eco-Friendly Visarjan</div>
+                  <div class="schedule-date-ribbon">
+                    <span class="ribbon-text">Friday, September 18, 2026</span>
+                  </div>
+                  <div class="schedule-timing">
+                    <span class="timing-bullet">⬥</span> Uttarpuja &amp; Farewell: 05:00 PM
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rotating Brown Mandala Wheel at Bottom of Page 3 (Matching Page 1 & 2) -->
+          <div class="schedule-bottom-wheel" aria-hidden="true">
+            <img src="assets/images/mandala-brown.svg" alt="Sacred Rotating Mandala Wheel">
+          </div>
+        </section>
+
+        <!-- ================= PAGE 4: VENUE & ACTIONS ================= -->
+        <section class="invitation-page venue-page-section" id="venueSection">
+          <div class="venue-card scroll-reveal">
+            <!-- Auspicious Top Header -->
+            <div class="venue-ornament-header">❖ || उत्सव निवास || ❖</div>
+            <div class="section-label">Festive Residence</div>
+            <h2 class="venue-name">Aakruti Heights</h2>
+            <div class="venue-title-filigree" aria-hidden="true"></div>
+
+            <!-- Address Box -->
+            <div class="venue-address-box">
+              <p class="venue-address">
+                Flat No. 104 , Aakruti Heights , Opp Aangan Party Plot , Near Prernatirth Derasar, Jodhpur Cross Road,
+                Ahmedabad, Gujarat 380015
+              </p>
+            </div>
+
+            <a href="https://maps.app.goo.gl/oVzRoKeTHngnd3Nj7" target="_blank" rel="noopener noreferrer"
+              class="directions-btn" id="getDirectionsBtn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              <span>Get Directions on Google Maps</span>
+            </a>
+          </div>
+
+          <!-- CTAs -->
+          <div class="action-buttons-wrap scroll-reveal">
+            <div class="presence-hint-text">
+              ✨ Let us know your presence through WhatsApp
+            </div>
+
+            <!-- WhatsApp Full-Width Button -->
+            <a href="https://wa.me/918469032599?text=Jay%20Ganesh!%20We%20will%20be%20joining%20you%20for%20Ganesh%20Darshan%20%F0%9F%99%8F"
+              target="_blank" rel="noopener noreferrer" class="whatsapp-rsvp-btn whatsapp-full-btn" id="whatsappRsvpBtn">
+              <img src="assets/images/whatsapp.svg" alt="WhatsApp" class="whatsapp-btn-icon" width="24" height="24">
+              <span>Let Us Know on WhatsApp</span>
+            </a>
+
+            <!-- Share Button -->
+            <button class="secondary-action-btn share-full-btn" id="shareWhatsAppBtn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" />
+              </svg>
+              <span>Share Invitation</span>
+            </button>
+          </div>
+
+          <!-- Rotating Brown Mandala Wheel at Bottom of Page 4 (Matching Other Pages) -->
+          <div class="venue-bottom-wheel" aria-hidden="true">
+            <img src="assets/images/mandala-brown.svg" alt="Sacred Rotating Mandala Wheel">
+          </div>
+        </section>
+
+        <!-- ================= PAGE 5: CLOSING BLESSINGS ================= -->
+        <section class="invitation-page closing-page-section" id="closingSection">
+          <div class="content-card closing-card scroll-reveal">
+            <!-- Sacred Om Stage with Golden Aura -->
+            <div class="closing-om-stage">
+              <div class="om-halo-glow" aria-hidden="true"></div>
+              <img src="assets/images/om.svg" alt="Om" class="closing-om-img" width="56" height="56">
+            </div>
+
+            <!-- Sacred Jaikara Calligraphy -->
+            <h2 class="closing-jaikara">
+              गणपती बाप्पा मोरया !<br>
+              मंगलमूर्ती मोरया !
+            </h2>
+
+            <!-- Gold Filigree Divider -->
+            <div class="closing-title-filigree" aria-hidden="true"></div>
+
+            <!-- Divine Blessing Message -->
+            <p class="closing-signoff">
+              May Lord Ganesha remove all obstacles and bestow abundant health, prosperity, peace, and wisdom upon you
+              and your family.
+            </p>
+
+            <!-- Host, Contact & Visiting Details Capsule -->
+            <div class="contact-pill-box">
+              <div class="contact-pill-item host-item">
+                <span class="pill-label">Warm Regards:</span>
+                <strong class="pill-value host-name-highlight">The Shah Family</strong>
+              </div>
+              <div class="contact-pill-item">
+                <span class="pill-label">RSVP / Contact:</span>
+                <a href="tel:+918469032599" class="pill-value contact-link">+91 84690 32599</a>
+              </div>
+              <div class="contact-pill-item">
+                <span class="pill-label">Visiting Hours:</span>
+                <span class="pill-value">10:00 AM to 10:00 PM Daily</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rotating Brown Mandala Wheel at Bottom of Page 5 (Matching Other Pages) -->
+          <div class="closing-bottom-wheel" aria-hidden="true">
+            <img src="assets/images/mandala-brown.svg" alt="Sacred Rotating Mandala Wheel">
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Interactive RSVP Modal -->
+  <div class="modal-backdrop" id="rsvpModal" role="dialog" aria-modal="true" aria-labelledby="rsvpModalTitle">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="closeRsvpBtn" aria-label="Close dialog">&times;</button>
+
+      <form id="rsvpForm">
+        <h3 class="modal-title" id="rsvpModalTitle">Join the Celebration</h3>
+        <p class="modal-subtitle">Let us know if you can join us so we can prepare Prasad!</p>
+
+        <div class="rsvp-form-group">
+          <label for="guestName">Your Full Name</label>
+          <input type="text" id="guestName" placeholder="e.g. Ramesh & Sunita Patel" required>
+        </div>
+
+        <div class="rsvp-form-group">
+          <label for="guestCount">Number of Guests</label>
+          <select id="guestCount">
+            <option value="1">1 Person</option>
+            <option value="2" selected>2 Persons</option>
+            <option value="3">3 Persons</option>
+            <option value="4">4 Persons</option>
+            <option value="5+">5+ Family Members</option>
+          </select>
+        </div>
+
+        <div class="rsvp-form-group">
+          <label for="attendingDay">Preferred Visiting Time</label>
+          <select id="attendingDay">
+            <option value="sep5">Saturday, Sept 5 (Sthapana)</option>
+            <option value="sep6">Sunday, Sept 6 (Maha Aarti)</option>
+            <option value="sep7">Monday, Sept 7</option>
+            <option value="sep8">Tuesday, Sept 8</option>
+            <option value="sep9">Wednesday, Sept 9 (Visarjan)</option>
+          </select>
+        </div>
+
+        <div class="rsvp-form-group">
+          <label for="guestWishes">Warm Wishes for Bappa (Optional)</label>
+          <textarea id="guestWishes" rows="2" placeholder="Send blessings or wishes to the host family..."></textarea>
+        </div>
+
+        <button type="submit" class="rsvp-submit-btn">
+          <span>Confirm Attendance 🙏</span>
+        </button>
+      </form>
+
+      <div class="rsvp-success-box" id="rsvpSuccessMsg">
+        <img src="assets/images/modak.svg" alt="Modak Prasad">
+        <h4>धन्यवाद ! RSVP Confirmed</h4>
+        <p>Your blessings have been received. We eagerly look forward to welcoming you with Ganpati Bappa's Prasad!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Engine & Interactive Logic -->
+  <script src="js/audio.js"></script>
+  <script src="js/petals.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
