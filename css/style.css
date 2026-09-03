@@ -825,16 +825,16 @@ body {
   line-height: 1.4;
 }
 
-/* Mooshak Selfie Mirror Invitation Stage (Gracefully Balanced & Taller) */
+/* Mooshak Selfie Mirror Invitation Stage (Enlarged & Prominent) */
 .mooshak-invitation-stage {
   position: relative;
-  width: 168px;
-  height: 252px;
-  margin: 6px auto 10px;
+  width: clamp(190px, 26vh, 220px);
+  height: clamp(285px, 39vh, 330px);
+  margin: clamp(4px, 0.8vh, 8px) auto clamp(8px, 1.2vh, 12px);
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0 6px 20px rgba(123, 30, 16, 0.2));
+  filter: drop-shadow(0 8px 24px rgba(123, 30, 16, 0.22));
 }
 
 .mooshak-camera-viewport {
@@ -842,8 +842,8 @@ body {
   top: 58.5%;
   left: 51.2%;
   transform: translate(-50%, -50%);
-  width: 99px;
-  height: 123px;
+  width: 59%;
+  height: 48.8%;
   border-radius: 50%;
   overflow: hidden;
   background: radial-gradient(circle, #FFFDF5 0%, #FEF3C7 60%, #FDE68A 100%);
@@ -851,7 +851,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0 0 12px rgba(123, 30, 16, 0.35);
+  box-shadow: inset 0 0 14px rgba(123, 30, 16, 0.35);
 }
 
 .mooshak-camera-viewport video {
