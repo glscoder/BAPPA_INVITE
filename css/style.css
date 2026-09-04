@@ -1665,8 +1665,8 @@ body {
 
 /* WhatsApp Presence Confirmation Hanging Banner on Page 4 */
 .venue-presence-banner-stage {
-  width: clamp(260px, 36vh, 320px);
-  margin: -8px auto clamp(2px, 0.4vh, 4px);
+  width: clamp(250px, 35vh, 310px);
+  margin: clamp(-14px, -2vh, -8px) auto clamp(2px, 0.4vh, 4px);
   position: relative;
   display: flex;
   justify-content: center;
@@ -1682,9 +1682,6 @@ body {
   display: block;
   filter: drop-shadow(0 6px 16px rgba(123, 30, 16, 0.2)) drop-shadow(0 0 10px rgba(255, 193, 7, 0.25));
   animation: presenceBannerSway 4s ease-in-out infinite alternate;
-  transform-origin: top center;
-  transition: transform 0.3s ease;
-}
   transform-origin: top center;
   transition: transform 0.3s ease;
 }
