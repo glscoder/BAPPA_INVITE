@@ -1808,20 +1808,41 @@ body {
   z-index: 5;
 }
 
-.presence-hint-text {
+.presence-highlight-banner {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  font-family: var(--font-heading);
-  font-size: clamp(0.82rem, 1.8vh, 0.92rem);
-  color: #7B1E10;
-  font-weight: 700;
-  letter-spacing: 0.4px;
+  gap: 8px;
+  margin: clamp(2px, 0.4vh, 6px) auto clamp(4px, 0.8vh, 8px);
   text-align: center;
-  margin: 0 auto clamp(2px, 0.5vh, 4px);
-  padding: 0 4px;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 10px rgba(245, 158, 11, 0.35);
+}
+
+.presence-text {
+  font-family: var(--font-heading);
+  font-size: clamp(0.88rem, 2vh, 1.02rem);
+  font-weight: 700;
+  color: #7B1E10;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 14px rgba(245, 158, 11, 0.45);
+}
+
+.presence-sparkle {
+  color: #D97706;
+  font-size: clamp(0.95rem, 2.2vh, 1.15rem);
+  animation: sparklePulse 2s infinite alternate ease-in-out;
+  display: inline-block;
+}
+
+@keyframes sparklePulse {
+  0% {
+    transform: scale(0.9) rotate(-5deg);
+    filter: drop-shadow(0 0 2px #F59E0B);
+  }
+  100% {
+    transform: scale(1.25) rotate(10deg);
+    filter: drop-shadow(0 0 10px #F59E0B);
+  }
 }
 
 .whatsapp-rsvp-btn {
