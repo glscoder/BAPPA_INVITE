@@ -1737,9 +1737,9 @@ body {
 
 .mooshak-speech-cloud-img {
   position: absolute;
-  top: clamp(-66px, -8.5vh, -50px);
-  right: clamp(-66px, -13vw, -45px);
-  width: clamp(124px, 17vh, 150px);
+  top: clamp(-78px, -10.5vh, -62px);
+  right: clamp(-82px, -16vw, -58px);
+  width: clamp(118px, 16vh, 142px);
   height: auto;
   aspect-ratio: 1024 / 682;
   object-fit: contain;
