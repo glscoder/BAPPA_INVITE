@@ -1703,7 +1703,7 @@ body {
   font-weight: 700;
   letter-spacing: 1.5px;
   color: #C2780A;
-  margin-bottom: 2px;
+  margin-bottom: clamp(10px, 1.8vh, 16px);
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
@@ -1737,9 +1737,9 @@ body {
 
 .mooshak-speech-cloud-img {
   position: absolute;
-  top: clamp(-54px, -7.5vh, -40px);
-  right: clamp(-72px, -15vw, -50px);
-  width: clamp(136px, 19vh, 168px);
+  top: clamp(-24px, -3.5vh, -14px);
+  right: clamp(-76px, -15vw, -54px);
+  width: clamp(130px, 18vh, 160px);
   height: auto;
   aspect-ratio: 1024 / 682;
   object-fit: contain;
