@@ -49,29 +49,66 @@ class SacredAudioController {
       if (this.audioCtx.state === "suspended") {
         this.audioCtx.resume();
       }
-      const now = this.audioCtx.currentTime;
-      const partials = [587.33, 1174.66, 1762.0, 2349.32];
-      const masterBellGain = this.audioCtx.createGain();
-      masterBellGain.gain.setValueAtTime(0.3, now);
-      masterBellGain.connect(this.audioCtx.destination);
+      const ctx = this.audioCtx;
+      const now = ctx.currentTime;
 
-      partials.forEach((freq, idx) => {
-        const osc = this.audioCtx.createOscillator();
-        const gain = this.audioCtx.createGain();
+      // Master output gain with gentle limiting
+      const masterBellGain = ctx.createGain();
+      masterBellGain.gain.setValueAtTime(0.55, now);
+      masterBellGain.connect(ctx.destination);
+
+      // 1. Strike transient (metallic brass clapper tap)
+      const bufferSize = Math.floor(ctx.sampleRate * 0.04);
+      const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.007));
+      }
+      const strikeNoise = ctx.createBufferSource();
+      strikeNoise.buffer = noiseBuffer;
+      const strikeFilter = ctx.createBiquadFilter();
+      strikeFilter.type = "bandpass";
+      strikeFilter.frequency.setValueAtTime(1400, now);
+      strikeFilter.Q.setValueAtTime(2.5, now);
+      const strikeGain = ctx.createGain();
+      strikeGain.gain.setValueAtTime(0.4, now);
+      strikeGain.gain.exponentialRampToValueAtTime(0.001, now + 0.045);
+      strikeNoise.connect(strikeFilter);
+      strikeFilter.connect(strikeGain);
+      strikeGain.connect(masterBellGain);
+      strikeNoise.start(now);
+
+      // 2. Authentic Indian Mandir Bronze Bell Harmonics & Natural Acoustic Beating
+      const baseFreq = 432.0; // Auspicious Vedic 432Hz Fundamental
+      const bellPartials = [
+        { ratio: 0.5, amp: 0.38, decay: 4.8, detune: 0 },    // Hum tone (Deep bronze chamber resonance)
+        { ratio: 1.0, amp: 0.50, decay: 4.2, detune: -1.2 }, // Prime Strike note 1
+        { ratio: 1.0, amp: 0.50, decay: 4.2, detune: 1.2 },  // Prime Strike note 2 (natural acoustic beat)
+        { ratio: 1.19, amp: 0.32, decay: 3.6, detune: 0 },   // Tierce (Minor third resonance)
+        { ratio: 1.50, amp: 0.28, decay: 3.2, detune: 1.5 }, // Quint (Sacred fifth)
+        { ratio: 2.00, amp: 0.32, decay: 2.9, detune: -1.8 },// Nominal (Octave)
+        { ratio: 2.76, amp: 0.20, decay: 2.4, detune: 0 },   // Superquint
+        { ratio: 3.00, amp: 0.16, decay: 2.0, detune: 1.0 }, // Octave + Fifth
+        { ratio: 4.10, amp: 0.12, decay: 1.6, detune: 0 },   // Upper shimmer
+        { ratio: 5.40, amp: 0.08, decay: 1.1, detune: 0 },   // High bell ring sparkle
+      ];
+
+      bellPartials.forEach((p) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
         osc.type = "sine";
-        osc.frequency.setValueAtTime(freq, now);
+        osc.frequency.setValueAtTime(baseFreq * p.ratio + p.detune, now);
 
-        const bellVolume = 0.08 / (idx + 1);
-        gain.gain.setValueAtTime(bellVolume, now);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + (3.5 - idx * 0.6));
+        gain.gain.setValueAtTime(p.amp, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + p.decay);
 
         osc.connect(gain);
         gain.connect(masterBellGain);
         osc.start(now);
-        osc.stop(now + 4.0);
+        osc.stop(now + p.decay + 0.1);
       });
     } catch (e) {
-      // Bell audio fallback
+      console.warn("Temple bell audio error:", e);
     }
   }
 

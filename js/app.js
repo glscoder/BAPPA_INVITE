@@ -109,6 +109,91 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
   let blessingQuoteIndex = 0;
 
+  // Realistic Botanical Flower Patterns (Marigold, Hibiscus, Golden Lotus, Jasmine)
+  const realisticFlowerSVGs = [
+    // 1. Auspicious Marigold (गेंदा)
+    `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="mgGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFF59D"/>
+          <stop offset="30%" stop-color="#FFA000"/>
+          <stop offset="70%" stop-color="#E65100"/>
+          <stop offset="100%" stop-color="#BF360C"/>
+        </radialGradient>
+      </defs>
+      <g transform="translate(50,50)">
+        <path d="M0 -44 C8 -40 18 -46 22 -40 C30 -42 36 -34 40 -26 C46 -20 44 -10 46 0 C44 10 46 20 40 26 C36 34 30 42 22 40 C18 46 8 40 0 44 C-8 40 -18 46 -22 40 C-30 42 -36 34 -40 26 C-46 20 -44 10 -46 0 C-44 -10 -46 -20 -40 -26 C-36 -34 -30 -42 -22 -40 C-18 -46 -8 -40 0 -44Z" fill="url(#mgGrad)"/>
+        <path d="M0 -30 C6 -27 12 -31 15 -27 C20 -28 24 -22 27 -17 C31 -13 30 -6 31 0 C30 6 31 13 27 17 C24 22 20 28 15 27 C12 31 6 27 0 30 C-6 27 -12 31 -15 27 C-20 28 -24 22 -27 17 C-31 13 -30 6 -31 0 C-30 -6 -31 -13 -27 -17 C-24 -22 -20 -28 -15 -27 C-12 -31 -6 -27 0 -30Z" fill="#FFB300" opacity="0.95"/>
+        <circle r="12" fill="#FF8F00"/>
+        <circle r="6" fill="#FFF9C4"/>
+      </g>
+    </svg>`,
+
+    // 2. Sacred Red Hibiscus (जास्वंद)
+    `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hibGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FF1744"/>
+          <stop offset="55%" stop-color="#D50000"/>
+          <stop offset="100%" stop-color="#880E4F"/>
+        </radialGradient>
+      </defs>
+      <g transform="translate(50,50)">
+        <path d="M0 -8 C-14 -36 -32 -28 -30 -8 C-28 6 -10 12 0 0" fill="url(#hibGrad)"/>
+        <path d="M0 -8 C-14 -36 -32 -28 -30 -8 C-28 6 -10 12 0 0" fill="url(#hibGrad)" transform="rotate(72)"/>
+        <path d="M0 -8 C-14 -36 -32 -28 -30 -8 C-28 6 -10 12 0 0" fill="url(#hibGrad)" transform="rotate(144)"/>
+        <path d="M0 -8 C-14 -36 -32 -28 -30 -8 C-28 6 -10 12 0 0" fill="url(#hibGrad)" transform="rotate(216)"/>
+        <path d="M0 -8 C-14 -36 -32 -28 -30 -8 C-28 6 -10 12 0 0" fill="url(#hibGrad)" transform="rotate(288)"/>
+        <circle r="6" fill="#B71C1C"/>
+        <line x1="0" y1="0" x2="16" y2="-20" stroke="#FFD600" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="16" cy="-20" r="3.2" fill="#FFEA00"/>
+      </g>
+    </svg>`,
+
+    // 3. Golden Sacred Lotus (कमल)
+    `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="lotusGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFFDE7"/>
+          <stop offset="35%" stop-color="#FFD54F"/>
+          <stop offset="80%" stop-color="#FF8F00"/>
+          <stop offset="100%" stop-color="#E65100"/>
+        </radialGradient>
+      </defs>
+      <g transform="translate(50,50)">
+        <path d="M0 -38 C14 -22 18 0 0 10 C-18 0 -14 -22 0 -38Z" fill="url(#lotusGrad)"/>
+        <path d="M0 -38 C14 -22 18 0 0 10 C-18 0 -14 -22 0 -38Z" fill="url(#lotusGrad)" transform="rotate(45)"/>
+        <path d="M0 -38 C14 -22 18 0 0 10 C-18 0 -14 -22 0 -38Z" fill="url(#lotusGrad)" transform="rotate(90)"/>
+        <path d="M0 -38 C14 -22 18 0 0 10 C-18 0 -14 -22 0 -38Z" fill="url(#lotusGrad)" transform="rotate(135)"/>
+        <path d="M0 -38 C14 -22 18 0 0 10 C-18 0 -14 -22 0 -38Z" fill="url(#lotusGrad)" transform="rotate(180)"/>
+        <path d="M0 -38 C14 -22 18 0 0 10 C-18 0 -14 -22 0 -38Z" fill="url(#lotusGrad)" transform="rotate(225)"/>
+        <path d="M0 -38 C14 -22 18 0 0 10 C-18 0 -14 -22 0 -38Z" fill="url(#lotusGrad)" transform="rotate(270)"/>
+        <path d="M0 -38 C14 -22 18 0 0 10 C-18 0 -14 -22 0 -38Z" fill="url(#lotusGrad)" transform="rotate(315)"/>
+        <circle r="9" fill="#FFF59D"/>
+      </g>
+    </svg>`,
+
+    // 4. Fragrant Jasmine / Mogra (मोगरा)
+    `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="mograGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="70%" stop-color="#FFFDE7"/>
+          <stop offset="100%" stop-color="#FFE082"/>
+        </radialGradient>
+      </defs>
+      <g transform="translate(50,50)">
+        <path d="M0 -34 C8 -22 10 0 0 6 C-10 0 -8 -22 0 -34Z" fill="url(#mograGrad)" stroke="#FFE082" stroke-width="0.8"/>
+        <path d="M0 -34 C8 -22 10 0 0 6 C-10 0 -8 -22 0 -34Z" fill="url(#mograGrad)" stroke="#FFE082" stroke-width="0.8" transform="rotate(60)"/>
+        <path d="M0 -34 C8 -22 10 0 0 6 C-10 0 -8 -22 0 -34Z" fill="url(#mograGrad)" stroke="#FFE082" stroke-width="0.8" transform="rotate(120)"/>
+        <path d="M0 -34 C8 -22 10 0 0 6 C-10 0 -8 -22 0 -34Z" fill="url(#mograGrad)" stroke="#FFE082" stroke-width="0.8" transform="rotate(180)"/>
+        <path d="M0 -34 C8 -22 10 0 0 6 C-10 0 -8 -22 0 -34Z" fill="url(#mograGrad)" stroke="#FFE082" stroke-width="0.8" transform="rotate(240)"/>
+        <path d="M0 -34 C8 -22 10 0 0 6 C-10 0 -8 -22 0 -34Z" fill="url(#mograGrad)" stroke="#FFE082" stroke-width="0.8" transform="rotate(300)"/>
+        <circle r="6" fill="#FFF9C4"/>
+      </g>
+    </svg>`
+  ];
+
   function triggerBappaBlessing(e) {
     if (window.sacredAudio) {
       window.sacredAudio.playTempleBellChime();
@@ -121,27 +206,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (blessingParticlesContainer) {
-      const items = ["✨", "🌸", "🌼", "🕉️", "🪔", "🌺", "✨", "💫"];
-      const count = 10;
-      for (let i = 0; i < count; i++) {
-        const particle = document.createElement("span");
-        particle.className = "blessing-sparkle-item";
-        particle.textContent = items[Math.floor(Math.random() * items.length)];
+      const flowerCount = 10;
+      for (let i = 0; i < flowerCount; i++) {
+        const flowerEl = document.createElement("div");
+        flowerEl.className = "blessing-flower-item";
+        flowerEl.innerHTML = realisticFlowerSVGs[i % realisticFlowerSVGs.length];
 
-        const angle = (Math.PI * 2 * i) / count + (Math.random() * 0.4 - 0.2);
-        const distance = 40 + Math.random() * 65;
+        const angle = (Math.PI * 2 * i) / flowerCount + (Math.random() * 0.4 - 0.2);
+        const distance = 45 + Math.random() * 75;
         const tx = Math.cos(angle) * distance;
-        const ty = Math.sin(angle) * distance - 30;
-        const rot = (Math.random() * 60 - 30) + "deg";
+        const ty = Math.sin(angle) * distance - 25;
+        const rot = (Math.random() * 80 - 40) + "deg";
 
-        particle.style.setProperty("--tx", `${tx}px`);
-        particle.style.setProperty("--ty", `${ty}px`);
-        particle.style.setProperty("--rot", rot);
-        particle.style.left = "50%";
-        particle.style.top = "50%";
+        flowerEl.style.setProperty("--tx", `${tx}px`);
+        flowerEl.style.setProperty("--ty", `${ty}px`);
+        flowerEl.style.setProperty("--rot", rot);
+        flowerEl.style.left = "50%";
+        flowerEl.style.top = "50%";
 
-        blessingParticlesContainer.appendChild(particle);
-        setTimeout(() => particle.remove(), 1600);
+        blessingParticlesContainer.appendChild(flowerEl);
+        setTimeout(() => flowerEl.remove(), 1900);
       }
 
       // Divine floating blessing toast

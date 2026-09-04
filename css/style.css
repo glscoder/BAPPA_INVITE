@@ -537,8 +537,8 @@ body {
 .ganesha-hero-stage {
   width: auto;
   max-width: 90vw;
-  height: clamp(180px, 25vh, 230px);
-  margin: clamp(4px, 1vh, 8px) auto clamp(12px, 1.8vh, 20px);
+  height: clamp(195px, 27vh, 252px);
+  margin: clamp(2px, 0.6vh, 6px) auto clamp(10px, 1.4vh, 16px);
   position: relative;
   z-index: 10;
   display: flex;
@@ -555,8 +555,8 @@ body {
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(140px, 20vh, 185px);
-  height: clamp(140px, 20vh, 185px);
+  width: clamp(155px, 22vh, 205px);
+  height: clamp(155px, 22vh, 205px);
   pointer-events: none;
   z-index: 1;
   display: flex;
@@ -687,7 +687,7 @@ body {
   }
 }
 
-/* Floating Blessing Particles & Sacred Toast */
+/* Floating Blessing Realistic Botanical Flowers & Sacred Toast */
 .ganesha-blessing-particles {
   position: absolute;
   inset: 0;
@@ -696,31 +696,37 @@ body {
   overflow: visible;
 }
 
-.blessing-sparkle-item {
+.blessing-flower-item {
   position: absolute;
   pointer-events: none;
-  font-size: clamp(1rem, 2.5vh, 1.35rem);
+  width: clamp(24px, 3.5vh, 36px);
+  height: clamp(24px, 3.5vh, 36px);
   will-change: transform, opacity;
-  animation: floatBlessingParticle 1.5s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+  animation: floatBlessingFlower 1.8s cubic-bezier(0.2, 0.85, 0.35, 1) forwards;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.28)) drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
 }
 
-@keyframes floatBlessingParticle {
+.blessing-flower-item svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes floatBlessingFlower {
   0% {
     opacity: 0;
-    transform: translate(0, 0) scale(0.4) rotate(0deg);
+    transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
   }
-  20% {
+  18% {
     opacity: 1;
-    transform: translate(var(--tx, 0px), var(--ty, -20px)) scale(1.2) rotate(var(--rot, 15deg));
-    filter: drop-shadow(0 0 8px gold);
+    transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, -20px))) scale(1.18) rotate(var(--rot, 25deg));
   }
-  80% {
-    opacity: 0.9;
+  75% {
+    opacity: 0.95;
   }
   100% {
     opacity: 0;
-    transform: translate(calc(var(--tx, 0px) * 1.5), calc(var(--ty, -50px) - 30px)) scale(0.7) rotate(calc(var(--rot, 15deg) * 2));
-    filter: drop-shadow(0 0 2px gold);
+    transform: translate(calc(-50% + var(--tx, 0px) * 1.45), calc(-50% + var(--ty, -60px) - 35px)) scale(0.6) rotate(calc(var(--rot, 25deg) * 2.2));
   }
 }
 
