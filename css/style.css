@@ -1655,12 +1655,49 @@ body {
 
 .venue-header-wrap {
   text-align: center;
-  margin-top: clamp(14px, 2.4vh, 22px);
+  margin-top: clamp(2px, 0.4vh, 6px);
   margin-bottom: clamp(2px, 0.4vh, 6px);
   position: relative;
   z-index: 5;
   width: 100%;
   max-width: 380px;
+}
+
+/* WhatsApp Presence Confirmation Hanging Banner on Page 4 */
+.venue-presence-banner-stage {
+  width: clamp(210px, 30vh, 265px);
+  margin: 0 auto clamp(3px, 0.6vh, 6px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.venue-presence-banner-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 409;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 16px rgba(123, 30, 16, 0.2)) drop-shadow(0 0 10px rgba(255, 193, 7, 0.25));
+  animation: presenceBannerSway 4s ease-in-out infinite alternate;
+  transform-origin: top center;
+  transition: transform 0.3s ease;
+}
+
+@keyframes presenceBannerSway {
+  0% {
+    transform: rotate(0.4deg) translateY(0);
+  }
+  100% {
+    transform: rotate(-0.4deg) translateY(-1.5px);
+  }
+}
+
+.venue-presence-banner-stage:hover .venue-presence-banner-img {
+  transform: scale(1.025);
+  filter: drop-shadow(0 8px 22px rgba(123, 30, 16, 0.28)) drop-shadow(0 0 16px rgba(255, 215, 0, 0.5));
 }
 
 .venue-card {
@@ -1703,7 +1740,7 @@ body {
   font-weight: 700;
   letter-spacing: 1.5px;
   color: #C2780A;
-  margin-bottom: clamp(10px, 1.8vh, 16px);
+  margin-bottom: 2px;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
@@ -1733,36 +1770,6 @@ body {
 .venue-mooshak-board-stage:hover .venue-board-img {
   transform: scale(1.03) translateY(-1px);
   filter: drop-shadow(0 8px 24px rgba(123, 30, 16, 0.32)) drop-shadow(0 0 18px rgba(255, 215, 0, 0.65));
-}
-
-.mooshak-speech-cloud-img {
-  position: absolute;
-  top: clamp(-24px, -3.5vh, -14px);
-  right: clamp(-76px, -15vw, -54px);
-  width: clamp(130px, 18vh, 160px);
-  height: auto;
-  aspect-ratio: 1024 / 682;
-  object-fit: contain;
-  display: block;
-  z-index: 6;
-  pointer-events: none;
-  filter: drop-shadow(0 6px 16px rgba(123, 30, 16, 0.22)) drop-shadow(0 0 14px rgba(255, 193, 7, 0.4));
-  animation: speechCloudGentleFloat 3.5s ease-in-out infinite alternate;
-  transition: transform 0.3s ease;
-}
-
-@keyframes speechCloudGentleFloat {
-  0% {
-    transform: translateY(0) rotate(0.5deg);
-  }
-  100% {
-    transform: translateY(-4px) rotate(-1.2deg);
-  }
-}
-
-.venue-mooshak-board-stage:hover .mooshak-speech-cloud-img {
-  transform: scale(1.05) translateY(-3px);
-  filter: drop-shadow(0 8px 22px rgba(123, 30, 16, 0.3)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.7));
 }
 
 .venue-board-glow {
