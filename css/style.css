@@ -1302,7 +1302,7 @@ body {
 }
 
 /* ==========================================================================
-   PAGE 3: ROYAL UTSAV SCHEDULE (EXACT SENT DESIGN)
+   PAGE 3: ROYAL UTSAV SCHEDULE TIMELINE
    ========================================================================== */
 
 .schedule-page-section {
@@ -1316,361 +1316,262 @@ body {
   height: 100dvh;
   min-height: 100dvh;
   max-height: 100dvh;
-  padding: clamp(6px, 1.2vh, 12px) clamp(6px, 1.8vw, 12px);
+  padding: clamp(8px, 1.6vh, 16px) clamp(10px, 3vw, 16px);
   box-sizing: border-box;
-  background: radial-gradient(circle at 50% 30%, #FFFDF9 0%, #FAF5EA 60%, #F5ECDA 100%);
 }
 
-/* Hanging Garland on Left */
-.schedule-hang-garland {
+/* Rotating Brown Mandala Wheel at Bottom of Page 3 (Matching Page 1 & 2) */
+.schedule-bottom-wheel {
   position: absolute;
-  top: 0;
-  left: clamp(4px, 1.5vw, 10px);
-  width: clamp(38px, 5.5vw, 50px);
-  z-index: 12;
+  bottom: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 340px;
+  height: 340px;
+  max-width: 95%;
   pointer-events: none;
+  z-index: 1;
+  opacity: 0.32;
+  line-height: 0;
 }
 
-.schedule-hang-garland img {
+.schedule-bottom-wheel img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 10px rgba(123, 30, 16, 0.25));
-}
-
-/* Vertical Pillar Typography */
-.schedule-pillar-text {
-  position: absolute;
-  top: 10%;
-  font-family: var(--font-heading);
-  font-size: clamp(0.48rem, 1vh, 0.58rem);
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #B45309;
-  opacity: 0.65;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(8px, 1.4vh, 14px);
-  z-index: 3;
-  pointer-events: none;
-  user-select: none;
-}
-
-.schedule-pillar-text.pillar-left {
-  left: clamp(6px, 1.6vw, 12px);
-  text-align: left;
-}
-
-.schedule-pillar-text.pillar-right {
-  right: clamp(6px, 1.6vw, 12px);
-  text-align: right;
-}
-
-/* Grand Content Card Frame */
-.schedule-grand-card {
-  width: 100%;
-  max-width: 440px;
   height: 100%;
-  max-height: calc(100dvh - 12px);
-  margin: 0 auto;
-  background: linear-gradient(180deg, #FFFDF9 0%, #FAF6ED 100%);
-  border: 1.5px solid rgba(217, 119, 6, 0.38);
-  border-radius: 20px;
-  box-shadow: 0 10px 32px rgba(123, 30, 16, 0.08), inset 0 0 0 1px rgba(254, 243, 199, 0.6);
+  object-fit: contain;
+  display: block;
+  animation: mandalaWheelRotate 45s linear infinite;
+  filter: drop-shadow(0 -4px 10px rgba(123, 30, 16, 0.1));
+}
+
+/* Mooshak Guide Mascot Figurine on Page 3 & 4 (Significantly Enlarged) */
+.section-mooshak-mascot {
+  position: relative;
+  width: clamp(90px, 13.5vh, 125px);
+  height: clamp(90px, 13.5vh, 125px);
+  margin: 0 auto clamp(1px, 0.3vh, 4px);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.section-mooshak-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
   position: relative;
-  z-index: 5;
-  padding: clamp(6px, 1vh, 10px) clamp(8px, 2vw, 14px) clamp(16px, 2.5vh, 22px);
-  box-sizing: border-box;
+  z-index: 2;
+  filter: drop-shadow(0 6px 16px rgba(123, 30, 16, 0.25)) drop-shadow(0 0 12px rgba(255, 193, 7, 0.35));
+  animation: mascotGentleFloat 3.8s ease-in-out infinite alternate;
+  transition: transform 0.3s ease;
 }
 
-/* Top Royal Mandir Arch */
-.schedule-top-arch {
-  position: relative;
-  text-align: center;
-  border: 1px solid rgba(217, 119, 6, 0.35);
-  border-radius: 120px 120px 14px 14px;
-  padding: clamp(6px, 1.2vh, 12px) clamp(10px, 2vw, 16px) clamp(4px, 0.8vh, 6px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 248, 235, 0.9) 100%);
-  margin-bottom: clamp(3px, 0.6vh, 6px);
+.section-mooshak-mascot:hover .section-mooshak-img {
+  transform: scale(1.08) translateY(-3px);
+  filter: drop-shadow(0 8px 20px rgba(123, 30, 16, 0.32)) drop-shadow(0 0 16px rgba(255, 215, 0, 0.7));
 }
 
-.arch-pinnacle-emblem {
-  margin: -4px auto 1px;
-  font-size: clamp(0.75rem, 1.4vh, 0.9rem);
-  filter: drop-shadow(0 0 6px rgba(255, 193, 7, 0.7));
+.mascot-halo-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.45) 0%, rgba(245, 158, 11, 0.2) 45%, transparent 72%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.arch-sanskrit-badge {
+@keyframes mascotGentleFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(1.5deg);
+  }
+  100% {
+    transform: translateY(-7px) rotate(-1.5deg);
+  }
+}
+
+.schedule-ornament-header {
   font-family: var(--font-heading);
-  font-size: clamp(0.72rem, 1.4vh, 0.82rem);
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: #7B1E10;
-  margin-bottom: 1px;
+  color: #C2780A;
+  margin-bottom: 2px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-.arch-motif-floret {
-  font-size: 0.65rem;
-  color: #D97706;
-  margin-bottom: 1px;
+.section-header-wrap {
+  text-align: center;
+  margin-bottom: clamp(3px, 0.7vh, 6px);
+  position: relative;
+  z-index: 2;
 }
 
-.arch-utsav-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.7vh, 1.65rem);
-  font-weight: 800;
-  line-height: 1.05;
-  color: #7B1E10;
-  letter-spacing: 1px;
-  margin: 2px 0;
-  text-shadow: 0 1px 2px rgba(123, 30, 16, 0.12);
-}
-
-.arch-journey-subtitle {
-  font-size: clamp(0.52rem, 1vh, 0.6rem);
-  letter-spacing: 1.6px;
+.section-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
   color: #B45309;
   font-weight: 700;
   margin-bottom: 2px;
-  text-transform: uppercase;
 }
 
-.arch-gold-divider {
-  font-size: 0.6rem;
-  color: #D97706;
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vh, 1.7rem);
+  color: #7B1E10;
+  letter-spacing: 0.6px;
+  text-shadow: 0 1px 2px rgba(123, 30, 16, 0.12);
+  margin-bottom: 2px;
 }
 
-/* Mooshak Mascot in Corner with Modak */
-.schedule-mascot-corner {
-  position: absolute;
-  top: -6px;
-  right: -8px;
-  width: clamp(70px, 11.5vh, 92px);
-  height: clamp(70px, 11.5vh, 92px);
-  pointer-events: none;
-  z-index: 10;
+.schedule-title-filigree {
+  width: 90px;
+  height: 1.5px;
+  margin: 2px auto 0;
+  background: linear-gradient(90deg, transparent 0%, #D97706 50%, transparent 100%);
+  border-radius: 2px;
 }
 
-.schedule-mooshak-modak-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(123, 30, 16, 0.25));
-  animation: mascotGentleFloat 3.8s ease-in-out infinite alternate;
-}
-
-/* Timeline Rows Container */
-.schedule-timeline-container {
+/* Timeline Wrapper with connecting gold line */
+.schedule-timeline-wrap {
   position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: clamp(3px, 0.6vh, 6px);
-  padding: 2px 0;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
 }
 
-.schedule-spine-line {
+.schedule-timeline-spine {
   position: absolute;
-  top: 12px;
-  bottom: 12px;
-  left: clamp(34px, 5.8vw, 44px);
+  top: 20px;
+  bottom: 20px;
+  left: 33px;
   width: 2px;
   background: linear-gradient(180deg, rgba(217, 119, 6, 0.6) 0%, rgba(245, 158, 11, 0.8) 50%, rgba(217, 119, 6, 0.6) 100%);
   z-index: 1;
   border-radius: 2px;
 }
 
-/* Individual Schedule Row */
-.schedule-item-row {
+.schedule-grid {
+  width: 100%;
   display: flex;
-  align-items: center;
-  gap: clamp(5px, 1.4vw, 8px);
+  flex-direction: column;
+  gap: clamp(4px, 0.8vh, 6px);
   position: relative;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(217, 119, 6, 0.28);
+}
+
+.schedule-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 250, 242, 0.95) 100%);
+  border: 1.2px solid rgba(217, 119, 6, 0.35);
   border-radius: 12px;
-  padding: clamp(3px, 0.6vh, 6px) clamp(6px, 1.5vw, 10px);
-  box-shadow: 0 2px 8px rgba(123, 30, 16, 0.05);
-  transition: all 0.25s ease;
-}
-
-.schedule-item-row:hover {
-  transform: translateY(-1px);
-  border-color: rgba(217, 119, 6, 0.55);
-  background: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(123, 30, 16, 0.1);
-}
-
-.item-index-badge {
-  font-family: var(--font-heading);
-  font-size: clamp(0.72rem, 1.4vh, 0.82rem);
-  font-weight: 800;
-  color: #B45309;
-  width: 18px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.item-medallion-badge {
-  width: clamp(32px, 4.8vh, 42px);
-  height: clamp(32px, 4.8vh, 42px);
-  flex-shrink: 0;
-  position: relative;
-  z-index: 3;
+  padding: clamp(4px, 0.8vh, 7px) clamp(8px, 2vw, 12px);
   display: flex;
   align-items: center;
+  gap: clamp(8px, 2vw, 11px);
+  box-shadow: 0 4px 14px rgba(123, 30, 16, 0.06), inset 0 0 0 1px rgba(254, 243, 199, 0.5);
+  transition: all 0.28s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.schedule-card::after {
+  content: '❖';
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 10px;
+  color: #D97706;
+  opacity: 0.5;
+}
+
+.schedule-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(217, 119, 6, 0.55);
+  box-shadow: 0 8px 24px rgba(123, 30, 16, 0.12), inset 0 0 0 1px rgba(254, 243, 199, 0.8);
+}
+
+.schedule-icon-badge {
+  width: clamp(34px, 4.8vh, 40px);
+  height: clamp(34px, 4.8vh, 40px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 50%, #FDE68A 100%);
+  border: 1.5px solid #D97706;
+  box-shadow: 0 3px 8px rgba(123, 30, 16, 0.12), inset 0 0 6px rgba(245, 158, 11, 0.25);
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.25s ease;
 }
 
-.item-medallion-badge img {
-  width: 100%;
-  height: 100%;
+.schedule-card:hover .schedule-icon-badge {
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: 0 4px 12px rgba(123, 30, 16, 0.2);
+}
+
+.schedule-icon-badge img {
+  width: clamp(18px, 2.8vh, 22px);
+  height: clamp(18px, 2.8vh, 22px);
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(123, 30, 16, 0.2));
+  display: block;
+  filter: drop-shadow(0 1px 2px rgba(123, 30, 16, 0.2));
 }
 
-.item-main-details {
-  flex: 1.15;
-  min-width: 0;
+.schedule-info {
+  flex: 1;
   text-align: left;
 }
 
-.item-event-title {
+.schedule-event-title {
   font-family: var(--font-heading);
-  font-size: clamp(0.78rem, 1.5vh, 0.88rem);
-  font-weight: 800;
+  font-size: 1.02rem;
   color: #7B1E10;
-  line-height: 1.15;
+  font-weight: 700;
   margin-bottom: 2px;
-  letter-spacing: 0.3px;
+  line-height: 1.25;
 }
 
-.item-date-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  background: rgba(245, 158, 11, 0.14);
-  border: 0.5px solid rgba(217, 119, 6, 0.35);
+.schedule-date-ribbon {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.12);
+  border: 0.5px solid rgba(217, 119, 6, 0.28);
   border-radius: 6px;
   padding: 1px 6px;
-  font-size: clamp(0.6rem, 1.1vh, 0.68rem);
-  font-weight: 700;
-  color: #9A3412;
   margin-bottom: 2px;
 }
 
-.pill-cal-icon {
-  font-size: 0.65rem;
-}
-
-.item-time-line {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  font-size: clamp(0.64rem, 1.2vh, 0.7rem);
-  font-weight: 600;
-  color: #5A1E14;
+.schedule-date-ribbon .ribbon-text {
+  font-size: 0.7rem;
+  color: #B45309;
+  font-weight: 700;
+  letter-spacing: 0.3px;
   line-height: 1.2;
 }
 
-.time-clock-icon {
-  font-size: 0.65rem;
+.schedule-timing {
+  font-size: 0.72rem;
+  color: #5A1E14;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
-.item-poetic-quote {
-  flex: 0.85;
-  max-width: 112px;
-  border-left: 1px dashed rgba(217, 119, 6, 0.35);
-  padding-left: clamp(4px, 1vw, 8px);
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(0.56rem, 1.05vh, 0.64rem);
-  color: #692215;
-  line-height: 1.25;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.quote-text {
-  margin: 0;
-}
-
-.quote-floret {
+.timing-bullet {
   color: #D97706;
-  font-size: 0.62rem;
-  margin-top: 1px;
-}
-
-/* Card Footer */
-.schedule-card-footer {
-  text-align: center;
-  padding-top: clamp(2px, 0.4vh, 4px);
-  margin-top: 1px;
-  border-top: 1px solid rgba(217, 119, 6, 0.2);
-}
-
-.footer-ganesha-symbol {
-  width: clamp(28px, 4vh, 34px);
-  height: auto;
-  margin: 0 auto 1px;
-}
-
-.footer-ganesha-symbol img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 1px 3px rgba(217, 119, 6, 0.4));
-}
-
-.footer-jaikara-heading {
-  font-family: var(--font-heading);
-  font-size: clamp(0.72rem, 1.4vh, 0.8rem);
-  font-weight: 800;
-  color: #7B1E10;
-  letter-spacing: 0.6px;
-  margin: 1px 0;
-}
-
-.footer-blessing-sub {
-  font-size: clamp(0.48rem, 0.95vh, 0.56rem);
-  font-weight: 700;
-  color: #B45309;
-  letter-spacing: 1px;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.footer-gold-leaf {
-  font-size: 0.58rem;
-  color: #D97706;
-  margin-top: 1px;
-}
-
-/* Bottom Floral Garland Frame */
-.schedule-bottom-garland-frame {
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: clamp(28px, 4.5vh, 42px);
-  pointer-events: none;
-  z-index: 10;
-}
-
-.schedule-bottom-garland-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
+  font-size: 0.55rem;
+  vertical-align: middle;
+  margin-right: 2px;
 }
 
 /* ==========================================================================
@@ -2012,9 +1913,9 @@ body {
 /* Sacred Om Stage with Golden Aura */
 .closing-om-stage {
   position: relative;
-  width: clamp(52px, 8vh, 64px);
-  height: clamp(52px, 8vh, 64px);
-  margin: 0 auto clamp(2px, 0.5vh, 5px);
+  width: clamp(58px, 9vh, 74px);
+  height: clamp(58px, 9vh, 74px);
+  margin: 0 auto clamp(2px, 0.4vh, 5px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2025,10 +1926,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 85px;
-  height: 85px;
+  width: 95px;
+  height: 95px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 193, 7, 0.4) 0%, rgba(245, 158, 11, 0.15) 50%, transparent 72%);
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.45) 0%, rgba(245, 158, 11, 0.18) 50%, transparent 72%);
   pointer-events: none;
   z-index: 1;
 }
@@ -2036,10 +1937,16 @@ body {
 .closing-om-img {
   position: relative;
   z-index: 2;
-  width: clamp(42px, 6.5vh, 52px);
-  height: clamp(42px, 6.5vh, 52px);
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(217, 119, 6, 0.45));
+  filter: drop-shadow(0 4px 12px rgba(123, 30, 16, 0.22)) drop-shadow(0 0 8px rgba(255, 193, 7, 0.35));
+  transition: transform 0.3s ease;
+}
+
+.closing-om-stage:hover .closing-om-img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 6px 16px rgba(123, 30, 16, 0.3)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.6));
 }
 
 .closing-jaikara {
