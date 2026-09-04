@@ -97,6 +97,77 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- Interactive Bappa Click / Tap Blessing Interaction ---
+  const ganeshaHeroStage = document.getElementById("ganeshaHeroStage");
+  const blessingParticlesContainer = document.getElementById("ganeshaBlessingParticles");
+
+  const blessingQuotes = [
+    "🙏 ॐ गं गणपतये नमः 🙏",
+    "✨ सुखकर्ता दुःखहर्ता बाप्पांचे आशीर्वाद ✨",
+    "🌸 गणपती बाप्पा मोरया • मंगलमूर्ती मोरया 🌸",
+    "🪔 रिद्धि-सिद्धिदाता सुख-समृद्धि प्रदाता 🪔"
+  ];
+  let blessingQuoteIndex = 0;
+
+  function triggerBappaBlessing(e) {
+    if (window.sacredAudio) {
+      window.sacredAudio.playTempleBellChime();
+    }
+
+    if (ganeshaHeroStage) {
+      ganeshaHeroStage.classList.remove("blessing-pulse");
+      void ganeshaHeroStage.offsetWidth; // Force CSS reflow
+      ganeshaHeroStage.classList.add("blessing-pulse");
+    }
+
+    if (blessingParticlesContainer) {
+      const items = ["✨", "🌸", "🌼", "🕉️", "🪔", "🌺", "✨", "💫"];
+      const count = 10;
+      for (let i = 0; i < count; i++) {
+        const particle = document.createElement("span");
+        particle.className = "blessing-sparkle-item";
+        particle.textContent = items[Math.floor(Math.random() * items.length)];
+
+        const angle = (Math.PI * 2 * i) / count + (Math.random() * 0.4 - 0.2);
+        const distance = 40 + Math.random() * 65;
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance - 30;
+        const rot = (Math.random() * 60 - 30) + "deg";
+
+        particle.style.setProperty("--tx", `${tx}px`);
+        particle.style.setProperty("--ty", `${ty}px`);
+        particle.style.setProperty("--rot", rot);
+        particle.style.left = "50%";
+        particle.style.top = "50%";
+
+        blessingParticlesContainer.appendChild(particle);
+        setTimeout(() => particle.remove(), 1600);
+      }
+
+      // Divine floating blessing toast
+      const existingToast = document.querySelector(".bappa-blessing-toast");
+      if (existingToast) existingToast.remove();
+
+      const toast = document.createElement("div");
+      toast.className = "bappa-blessing-toast";
+      toast.textContent = blessingQuotes[blessingQuoteIndex % blessingQuotes.length];
+      blessingQuoteIndex++;
+
+      ganeshaHeroStage.appendChild(toast);
+      setTimeout(() => toast.remove(), 2500);
+    }
+  }
+
+  if (ganeshaHeroStage) {
+    ganeshaHeroStage.addEventListener("click", triggerBappaBlessing);
+    ganeshaHeroStage.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        triggerBappaBlessing(e);
+      }
+    });
+  }
+
   // --- Intersection Observer for Scroll Animations ---
   const scrollElements = document.querySelectorAll(".scroll-reveal");
   const scrollObserver = new IntersectionObserver(
