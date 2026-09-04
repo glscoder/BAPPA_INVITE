@@ -1682,6 +1682,49 @@ body {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
+/* Mooshak Holding Festive Residence Board */
+.venue-mooshak-board-stage {
+  position: relative;
+  width: clamp(180px, 25vh, 240px);
+  margin: clamp(2px, 0.4vh, 4px) auto clamp(2px, 0.4vh, 5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.venue-board-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1014 / 834;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 6px 18px rgba(123, 30, 16, 0.25)) drop-shadow(0 0 12px rgba(255, 193, 7, 0.35));
+  animation: mascotGentleFloat 4s ease-in-out infinite alternate;
+  transition: transform 0.3s ease;
+}
+
+.venue-mooshak-board-stage:hover .venue-board-img {
+  transform: scale(1.04) translateY(-2px);
+  filter: drop-shadow(0 8px 24px rgba(123, 30, 16, 0.32)) drop-shadow(0 0 18px rgba(255, 215, 0, 0.65));
+}
+
+.venue-board-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 155px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 193, 7, 0.45) 0%, rgba(245, 158, 11, 0.18) 50%, transparent 72%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .venue-name {
   font-family: var(--font-heading);
   font-size: clamp(1.2rem, 2.6vh, 1.5rem);
