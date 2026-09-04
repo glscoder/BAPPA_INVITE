@@ -1665,42 +1665,13 @@ body {
 
 /* WhatsApp Presence Confirmation Hanging Banner on Page 4 */
 .venue-presence-banner-stage {
-  width: clamp(210px, 30vh, 265px);
-  margin: clamp(12px, 2vh, 20px) auto clamp(4px, 0.8vh, 8px);
+  width: clamp(260px, 36vh, 320px);
+  margin: -8px auto clamp(2px, 0.4vh, 4px);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 4;
-}
-
-/* Realistic Braided Golden Hanging Ropes Extending from the Top Ceiling */
-.venue-presence-banner-stage::before,
-.venue-presence-banner-stage::after {
-  content: '';
-  position: absolute;
-  top: -60px;
-  bottom: calc(100% - 3px);
-  width: 3.5px;
-  background: repeating-linear-gradient(
-    -45deg,
-    #B45309 0px,
-    #F59E0B 2px,
-    #D97706 4px,
-    #78350F 6px
-  );
-  border-radius: 2px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.22), inset 0 0 1px rgba(255, 255, 255, 0.5);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.venue-presence-banner-stage::before {
-  left: 7.9%;
-}
-
-.venue-presence-banner-stage::after {
-  right: 6.9%;
 }
 
 .venue-presence-banner-img {
@@ -1709,10 +1680,11 @@ body {
   aspect-ratio: 1024 / 409;
   object-fit: contain;
   display: block;
-  position: relative;
-  z-index: 2;
   filter: drop-shadow(0 6px 16px rgba(123, 30, 16, 0.2)) drop-shadow(0 0 10px rgba(255, 193, 7, 0.25));
   animation: presenceBannerSway 4s ease-in-out infinite alternate;
+  transform-origin: top center;
+  transition: transform 0.3s ease;
+}
   transform-origin: top center;
   transition: transform 0.3s ease;
 }
