@@ -97,6 +97,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- Next Page Jump Arrow Buttons ---
+  const nextPageButtons = document.querySelectorAll(".next-page-btn");
+  nextPageButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const targetSelector = btn.getAttribute("data-next-target");
+      if (targetSelector) {
+        const targetElement = document.querySelector(targetSelector);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  });
+
   // --- Back to Top Button (Brings user smoothly to Invitation 1st Page) ---
   const backToTopBtn = document.getElementById("backToTopBtn");
   if (backToTopBtn) {

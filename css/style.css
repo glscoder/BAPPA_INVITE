@@ -2231,6 +2231,64 @@ body {
 }
 
 /* ==========================================================================
+   NEXT PAGE JUMP ARROW BUTTONS
+   ========================================================================== */
+
+.next-page-btn {
+  position: absolute;
+  bottom: clamp(6px, 1.1vh, 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(30px, 4.2vh, 36px);
+  height: clamp(30px, 4.2vh, 36px);
+  background: linear-gradient(135deg, rgba(255, 253, 246, 0.95) 0%, rgba(254, 243, 199, 0.92) 100%);
+  border: 1.5px solid rgba(217, 119, 6, 0.65);
+  border-radius: 50%;
+  color: #7B1E10;
+  box-shadow: 0 4px 12px rgba(123, 30, 16, 0.15), 0 0 10px rgba(245, 158, 11, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 15;
+  outline: none;
+  padding: 0;
+  animation: nextPageArrowBounce 2s infinite ease-in-out;
+  transition: all 0.25s ease;
+}
+
+.next-page-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.8));
+}
+
+.next-page-btn:hover {
+  background: linear-gradient(135deg, #FFFDF6 0%, #FDE68A 100%);
+  border-color: #D97706;
+  transform: translateX(-50%) scale(1.12);
+  box-shadow: 0 6px 18px rgba(123, 30, 16, 0.22), 0 0 14px rgba(245, 158, 11, 0.5);
+}
+
+.next-page-btn:active {
+  transform: translateX(-50%) scale(0.92);
+}
+
+@keyframes nextPageArrowBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(4px);
+  }
+}
+
+/* ==========================================================================
    RSVP MODAL
    ========================================================================== */
 
