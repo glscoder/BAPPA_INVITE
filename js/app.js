@@ -97,6 +97,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- Back to Top Button (Brings user smoothly to Invitation 1st Page) ---
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", () => {
+      const heroSection = document.getElementById("heroSection");
+      const scrollViewport = document.getElementById("scrollViewport");
+      if (scrollViewport) {
+        scrollViewport.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: "smooth" });
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   // --- Interactive Bappa Click / Tap Blessing Interaction ---
   const ganeshaHeroStage = document.getElementById("ganeshaHeroStage");
   const blessingParticlesContainer = document.getElementById("ganeshaBlessingParticles");
