@@ -2463,6 +2463,41 @@ body {
   transform: scale(1) translateY(0);
 }
 
+/* Floating Top Notification Badge */
+.parchment-top-prompt {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #7B1E10 0%, #D9480F 50%, #B45309 100%);
+  border: 1.5px solid #F59E0B;
+  border-radius: 25px;
+  padding: 6px 14px;
+  color: #FFFDF9;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 14px rgba(245, 158, 11, 0.4);
+  z-index: 15;
+  animation: promptGlowPulse 2s infinite ease-in-out;
+}
+
+@keyframes promptGlowPulse {
+  0%, 100% {
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 10px rgba(245, 158, 11, 0.35);
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.7), 0 0 18px rgba(245, 158, 11, 0.65);
+    transform: translateX(-50%) translateY(-3px);
+  }
+}
+
 /* Background image of the transparent parchment scroll */
 .parchment-bg-img {
   position: absolute;
