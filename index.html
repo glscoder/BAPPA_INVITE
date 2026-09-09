@@ -464,69 +464,17 @@
   </main>
 
   <!-- Royal Parchment Guide Note Modal (Shown on Door Open) -->
-  <div class="guide-scroll-backdrop" id="guideScrollModal" role="dialog" aria-modal="true" aria-labelledby="guideScrollTitle">
+  <div class="guide-scroll-backdrop" id="guideScrollModal" role="dialog" aria-modal="true" aria-label="Welcome Guide Note">
     <div class="parchment-scroll-container">
       <button class="parchment-close-btn" id="closeGuideScrollBtn" aria-label="Close guide note">&times;</button>
       
-      <!-- Background Royal Parchment Scroll Image -->
-      <img src="assets/images/parchment-scroll.png" alt="Royal Parchment Scroll" class="parchment-bg-img">
+      <!-- High-res Royal Parchment Scroll Image with baked text -->
+      <img src="assets/images/parchment-scroll.png" alt="Royal Parchment Guide" class="parchment-bg-img">
 
-      <!-- Parchment Content Overlay Area -->
-      <div class="parchment-content-body">
-        <div class="parchment-header">
-          <span class="parchment-om-badge">॥ श्री गणेशाय नमः ॥</span>
-          <h3 class="parchment-title" id="guideScrollTitle">Welcome to Bappa's Invitation</h3>
-          <p class="parchment-intro">Here is a quick guide to make your celebration experience easy and joyful:</p>
-        </div>
-
-        <div class="parchment-steps-list">
-          <!-- Step 1: Scroll to explore -->
-          <div class="parchment-step-item">
-            <div class="step-icon-wrap">
-              <img src="assets/images/scroll-guide-icon.png" alt="Swipe up diagram" class="step-guide-icon">
-            </div>
-            <div class="step-text-wrap">
-              <h4 class="step-heading">Swipe / Scroll Up to Explore</h4>
-              <p class="step-desc">Swipe up or scroll on your screen to view each page — darshan dates, daily aarti schedule, location map & more.</p>
-            </div>
-          </div>
-
-          <!-- Step 2: 3 Language Switcher -->
-          <div class="parchment-step-item">
-            <div class="step-icon-wrap">
-              <div class="step-lang-badge-icon">
-                <span>EN</span>
-                <span class="dot">•</span>
-                <span>हिं</span>
-                <span class="dot">•</span>
-                <span>ગુ</span>
-              </div>
-            </div>
-            <div class="step-text-wrap">
-              <h4 class="step-heading">Switch in 3 Languages</h4>
-              <p class="step-desc">You can switch between <strong>English, हिन्दी, and ગુજરાતી</strong> at the top left anytime. Choosing a language will instantly display all details in your preferred language.</p>
-            </div>
-          </div>
-
-          <!-- Step 3: WhatsApp RSVP Confirmation -->
-          <div class="parchment-step-item">
-            <div class="step-icon-wrap">
-              <img src="assets/images/whatsapp.svg" alt="WhatsApp presence confirmation" class="step-wa-icon">
-            </div>
-            <div class="step-text-wrap">
-              <h4 class="step-heading">Confirm Presence via WhatsApp</h4>
-              <p class="step-desc">Please tap the <strong>Confirm on WhatsApp</strong> button on the venue page to let us know you're visiting so we can arrange Prasad and welcome you warmly.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Action / Explore button -->
-        <div class="parchment-action-wrap">
-          <button type="button" class="parchment-proceed-btn" id="proceedGuideScrollBtn">
-            <span>Explore Invitation 🙏</span>
-          </button>
-        </div>
-      </div>
+      <!-- 3 Interactive Language Overlay Buttons (English, Hindi, Gujarati) -->
+      <button class="parchment-lang-btn parchment-lang-en" id="guideLangEnBtn" data-lang="en" type="button" aria-label="Choose English"></button>
+      <button class="parchment-lang-btn parchment-lang-hi" id="guideLangHiBtn" data-lang="hi" type="button" aria-label="Choose Hindi"></button>
+      <button class="parchment-lang-btn parchment-lang-gu" id="guideLangGuBtn" data-lang="gu" type="button" aria-label="Choose Gujarati"></button>
     </div>
   </div>
 

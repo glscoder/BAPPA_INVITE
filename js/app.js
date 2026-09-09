@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const audioToggleBtn = document.getElementById("audioToggleBtn");
   const guideScrollModal = document.getElementById("guideScrollModal");
   const closeGuideScrollBtn = document.getElementById("closeGuideScrollBtn");
-  const proceedGuideScrollBtn = document.getElementById("proceedGuideScrollBtn");
   const rsvpModal = document.getElementById("rsvpModal");
   const openRsvpBtn = document.getElementById("openRsvpBtn");
   const closeRsvpBtn = document.getElementById("closeRsvpBtn");
@@ -36,9 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (closeGuideScrollBtn) {
     closeGuideScrollBtn.addEventListener("click", closeGuideModal);
   }
-  if (proceedGuideScrollBtn) {
-    proceedGuideScrollBtn.addEventListener("click", closeGuideModal);
-  }
   if (guideScrollModal) {
     guideScrollModal.addEventListener("click", (e) => {
       if (e.target === guideScrollModal) {
@@ -46,6 +42,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Interactive Parchment Language Choice Buttons (English, Hindi, Gujarati)
+  const parchmentLangBtns = document.querySelectorAll(".parchment-lang-btn");
+  parchmentLangBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const lang = btn.getAttribute("data-lang");
+      if (lang && typeof window.setAppLanguage === "function") {
+        window.setAppLanguage(lang);
+        if (window.sacredAudio) {
+          window.sacredAudio.playSoftTransitionTone();
+        }
+      }
+      closeGuideModal();
+    });
+  });
 
   // --- Multi-Language Engine Initialization (English, Hindi, Gujarati) ---
   const initialLang = localStorage.getItem("bappa_invite_lang") || "en";

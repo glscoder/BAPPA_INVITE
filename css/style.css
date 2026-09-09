@@ -2447,8 +2447,8 @@ body {
 .parchment-scroll-container {
   position: relative;
   width: 100%;
-  max-width: 400px;
-  aspect-ratio: 682 / 1024;
+  max-width: 380px;
+  aspect-ratio: 576 / 1024;
   max-height: 92vh;
   max-height: 92dvh;
   display: flex;
@@ -2456,7 +2456,7 @@ body {
   align-items: center;
   transform: scale(0.88) translateY(20px);
   transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.25);
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 20px rgba(245, 158, 11, 0.2));
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 20px rgba(245, 158, 11, 0.25));
 }
 
 .guide-scroll-backdrop.active .parchment-scroll-container {
@@ -2478,15 +2478,15 @@ body {
 /* Close button on top-right of the parchment */
 .parchment-close-btn {
   position: absolute;
-  top: 4%;
+  top: 3.5%;
   right: 5%;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: rgba(90, 20, 10, 0.9);
+  background: rgba(90, 20, 10, 0.92);
   border: 1.5px solid #F59E0B;
   color: #FFFDF9;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -2502,215 +2502,44 @@ body {
   transform: scale(1.1);
 }
 
-/* Inner content area strictly inside the 2:3 parchment paper boundaries */
-.parchment-content-body {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  padding: 16.5% 17% 17.5% 17%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-
-.parchment-content-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* Parchment Header */
-.parchment-header {
-  text-align: center;
-  margin-bottom: 4px;
-}
-
-.parchment-om-badge {
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: #7B1E10;
-  letter-spacing: 1px;
-  margin-bottom: 2px;
-}
-
-.parchment-title {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  line-height: 1.2;
-  color: #3E1006;
-  margin-bottom: 3px;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
-}
-
-.parchment-intro {
-  font-size: 0.68rem;
-  line-height: 1.3;
-  color: #632213;
-  font-weight: 500;
-}
-
-/* Steps list inside parchment */
-.parchment-steps-list {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin: 4px 0;
-}
-
-.parchment-step-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 248, 235, 0.55);
-  border: 1px solid rgba(192, 122, 16, 0.35);
-  border-radius: 10px;
-  padding: 6px 9px;
-  box-shadow: 0 2px 5px rgba(123, 30, 16, 0.04);
-}
-
-.step-icon-wrap {
-  flex-shrink: 0;
-  width: 34px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(217, 119, 6, 0.45);
-  border-radius: 7px;
-  padding: 2px;
-}
-
-.step-guide-icon {
-  width: 22px;
-  height: 26px;
-  object-fit: contain;
-}
-
-.step-wa-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.step-lang-badge-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.58rem;
-  font-weight: 700;
-  color: #7B1E10;
-  line-height: 1.05;
-}
-
-.step-lang-badge-icon .dot {
-  font-size: 0.45rem;
-  color: #D9480F;
-  margin: -1px 0;
-}
-
-.step-text-wrap {
-  flex: 1;
-  text-align: left;
-}
-
-.step-heading {
-  font-family: var(--font-body);
-  font-size: 0.74rem;
-  font-weight: 700;
-  color: #3E1006;
-  margin-bottom: 1px;
-  line-height: 1.2;
-}
-
-.step-desc {
-  font-size: 0.62rem;
-  line-height: 1.25;
-  color: #5C1D0F;
-}
-
-.step-desc strong {
-  color: #8C1C0D;
-}
-
-/* Proceed CTA button */
-.parchment-action-wrap {
-  margin-top: 4px;
-  text-align: center;
-}
-
-.parchment-proceed-btn {
-  width: 100%;
-  background: linear-gradient(135deg, #C22020 0%, #D9480F 50%, #A14205 100%);
-  color: #FFFFFF;
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 220, 100, 0.6);
-  box-shadow: 0 4px 12px rgba(180, 40, 10, 0.35);
+/* 3 Interactive Language Overlay Buttons (Matching bottom 3 button slots) */
+.parchment-lang-btn {
+  position: absolute;
+  top: 79.1%;
+  height: 3.8%;
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: 20px;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  z-index: 5;
+  transition: all 0.2s ease;
 }
 
-.parchment-proceed-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(180, 40, 10, 0.45);
+.parchment-lang-btn:hover {
+  background: rgba(255, 235, 175, 0.2);
+  border-color: rgba(255, 215, 0, 0.7);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.45);
+  transform: scale(1.05);
 }
 
-.parchment-proceed-btn:active {
-  transform: translateY(1px);
+.parchment-lang-btn:active {
+  transform: scale(0.96);
 }
 
-/* Ultra-compact screen adaptations */
-@media (max-height: 650px) or (max-width: 360px) {
-  .parchment-scroll-container {
-    max-width: 330px;
-  }
+/* Exact Left/Center/Right positions matching image maroon button regions */
+.parchment-lang-en {
+  left: 19.5%;
+  width: 17%;
+}
 
-  .parchment-content-body {
-    padding: 17% 17.5% 18% 17.5%;
-  }
+.parchment-lang-hi {
+  left: 41.5%;
+  width: 17%;
+}
 
-  .parchment-title {
-    font-size: 1rem;
-  }
-
-  .parchment-intro {
-    font-size: 0.6rem;
-  }
-
-  .parchment-steps-list {
-    gap: 4px;
-  }
-
-  .parchment-step-item {
-    padding: 4px 6px;
-    gap: 7px;
-  }
-
-  .step-icon-wrap {
-    width: 28px;
-    height: 30px;
-  }
-
-  .step-heading {
-    font-size: 0.68rem;
-  }
-
-  .step-desc {
-    font-size: 0.58rem;
-  }
-
-  .parchment-proceed-btn {
-    font-size: 0.75rem;
-    padding: 6px 10px;
-  }
+.parchment-lang-gu {
+  left: 63.5%;
+  width: 17%;
 }
 
 /* ==========================================================================
