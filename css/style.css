@@ -93,15 +93,15 @@ body {
   position: relative;
 }
 
-/* On Desktop */
-@media (min-width: 601px) {
+/* On Desktop & Large Displays (>= 1025px) */
+@media (min-width: 1025px) {
   .viewport-stage {
-    padding: 24px 0;
+    padding: clamp(20px, 3vh, 32px) 0;
   }
 
   .mobile-frame {
-    width: 430px;
-    height: 900px;
+    width: clamp(430px, 32vw, 470px);
+    height: clamp(860px, 94vh, 920px);
     max-height: 95vh;
     border-radius: 40px;
     border: 3px solid rgba(245, 158, 11, 0.5);
@@ -110,6 +110,30 @@ body {
     overflow: hidden;
     position: relative;
     background: var(--bg-parchment);
+  }
+}
+
+/* On Tablets & Mid-size screens (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .viewport-stage {
+    padding: clamp(12px, 2vh, 24px) 0;
+  }
+
+  .mobile-frame {
+    width: min(500px, 92vw);
+    height: min(940px, 96vh);
+    max-height: 96vh;
+    border-radius: 32px;
+    border: 3px solid rgba(245, 158, 11, 0.5);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.75),
+      0 0 25px rgba(245, 158, 11, 0.25);
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-parchment);
+  }
+
+  .invitation-page {
+    padding: clamp(12px, 2.2vh, 24px) clamp(16px, 3.2vw, 24px);
   }
 }
 
@@ -1013,7 +1037,7 @@ html[lang="gu"] .calligraphy-title {
   margin: 0 auto;
   box-shadow: 0 6px 20px rgba(123, 30, 16, 0.08), inset 0 0 12px rgba(245, 158, 11, 0.08);
   width: 90%;
-  max-width: 370px;
+  max-width: min(460px, 94%);
   cursor: pointer;
   transition: all 0.25s ease;
 }
@@ -1154,7 +1178,7 @@ html[lang="gu"] .calligraphy-title {
 
 .content-card {
   width: 100%;
-  max-width: 380px;
+  max-width: min(480px, 100%);
   background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: var(--card-border);
@@ -1379,7 +1403,7 @@ html[lang="gu"] .calligraphy-title {
   position: relative;
   z-index: 5;
   width: 100%;
-  max-width: 380px;
+  max-width: min(480px, 100%);
   max-height: calc(100dvh - 24px);
   background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 100%);
   border: 1.5px solid rgba(217, 119, 6, 0.38);
@@ -1699,7 +1723,7 @@ html[lang="gu"] .family-title {
 .schedule-timeline-wrap {
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: min(480px, 100%);
   margin: 0 auto;
 }
 
@@ -1900,7 +1924,7 @@ html[lang="gu"] .family-title {
 
 .venue-card {
   width: 100%;
-  max-width: 380px;
+  max-width: min(480px, 100%);
   background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 100%);
   border: 1.5px solid rgba(217, 119, 6, 0.38);
   border-radius: 18px;
@@ -2053,7 +2077,7 @@ html[lang="gu"] .family-title {
 
 .action-buttons-wrap {
   width: 100%;
-  max-width: 380px;
+  max-width: min(480px, 100%);
   display: flex;
   flex-direction: column;
   gap: clamp(6px, 1vh, 9px);
@@ -2210,7 +2234,7 @@ html[lang="gu"] .family-title {
 
 .closing-card {
   width: 100%;
-  max-width: 380px;
+  max-width: min(480px, 100%);
   max-height: calc(100dvh - 24px);
   background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 100%);
   border: 1.5px solid rgba(217, 119, 6, 0.38);
@@ -2514,7 +2538,7 @@ html[lang="gu"] .family-title {
 .parchment-scroll-container {
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: min(420px, 92vw);
   aspect-ratio: 576 / 1024;
   max-height: 92vh;
   max-height: 92dvh;
