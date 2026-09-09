@@ -7,8 +7,7 @@ const TRANSLATIONS = {
   en: {
     // Top Bar & Controls
     audio_tooltip: "Toggle Sacred Music",
-    theme_day: "Switch to Night Temple",
-    theme_night: "Switch to Day Temple",
+    audio_mute_hint: "Tap 🔔 to mute music",
 
     // Page 1: Hero
     shloka_header: "❖ || श्री गणेशाय नमः || ❖",
@@ -86,8 +85,7 @@ const TRANSLATIONS = {
   hi: {
     // Top Bar & Controls
     audio_tooltip: "भक्ति संगीत चालू/बंद करें",
-    theme_day: "संध्या/दीपक दर्शन चालू करें",
-    theme_night: "दिन का दर्शन चालू करें",
+    audio_mute_hint: "संगीत बंद/चालू करने हेतु 🔔 दबाएं",
 
     // Page 1: Hero
     shloka_header: "❖ || श्री गणेशाय नमः || ❖",
@@ -165,8 +163,7 @@ const TRANSLATIONS = {
   gu: {
     // Top Bar & Controls
     audio_tooltip: "ભક્તિ સંગીત શરૂ/બંધ",
-    theme_day: "દીવા દર્શન મોડ",
-    theme_night: "દિવસ દર્શન મોડ",
+    audio_mute_hint: "સંગીત બંધ/ચાલુ કરવા 🔔 દબાવો",
 
     // Page 1: Hero
     shloka_header: "❖ || શ્રી ગણેશાય નમઃ || ❖",

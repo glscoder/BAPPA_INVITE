@@ -82,6 +82,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (scrollPrompt) {
       scrollPrompt.classList.add("visible");
     }
+
+    // Aesthetic audio mute notification beside bell button
+    setTimeout(() => {
+      const audioHint = document.getElementById("audioHintTooltip");
+      if (audioHint) {
+        audioHint.classList.add("show");
+        // Auto fade out after 5.5 seconds
+        setTimeout(() => {
+          audioHint.classList.remove("show");
+        }, 5500);
+      }
+    }, 1600);
   }
 
   if (openInviteBtn) {
@@ -101,10 +113,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Audio Toggle
   if (audioToggleBtn) {
     audioToggleBtn.addEventListener("click", () => {
+      const audioHint = document.getElementById("audioHintTooltip");
+      if (audioHint) audioHint.classList.remove("show");
       if (window.sacredAudio) {
         window.sacredAudio.toggleMute();
       }
     });
+  }
+
+  // Dismiss audio hint on scroll
+  const scrollViewport = document.getElementById("scrollViewport");
+  if (scrollViewport) {
+    scrollViewport.addEventListener("scroll", () => {
+      const audioHint = document.getElementById("audioHintTooltip");
+      if (audioHint && audioHint.classList.contains("show")) {
+        audioHint.classList.remove("show");
+      }
+    }, { passive: true, once: true });
   }
 
   // Scroll to section helper
