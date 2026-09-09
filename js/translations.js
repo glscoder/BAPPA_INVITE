@@ -37,6 +37,9 @@ const TRANSLATIONS = {
     event_2_title: "Daily Aarti & Mahaprasad",
     event_2_date: "Every Day (Sept 14 – Sept 16)",
     event_2_time: "⬥ Morning Aarti: 10:30 AM | Evening Aarti: 7:30 PM (Followed by Prasad)",
+    event_3_title: "Darshan & Visiting Hours",
+    event_3_date: "Every Day (Sept 14 – Sept 17)",
+    event_3_time: "⬥ 10:00 AM to 10:00 PM Daily",
     event_4_title: "Visarjan",
     event_4_date: "Thursday, September 17, 2026",
     event_4_time: "⬥ According to Muhurat",
@@ -54,8 +57,6 @@ const TRANSLATIONS = {
     label_regards: "Warm Regards:",
     host_family: "The Shah Family",
     label_contact: "RSVP / Contact:",
-    label_visiting_hours: "Visiting Hours:",
-    visiting_hours_val: "10:00 AM to 10:00 PM Daily",
     btn_back_to_top: "Back to Top",
 
     // RSVP Modal
@@ -110,6 +111,9 @@ const TRANSLATIONS = {
     event_2_title: "दैनिक आरती एवं महाप्रसाद",
     event_2_date: "प्रतिदिन (14 सितम्बर – 16 सितम्बर)",
     event_2_time: "⬥ प्रातः आरती: 10:30 बजे | सायं आरती: 7:30 बजे (तत्पश्चात महाप्रसाद)",
+    event_3_title: "दर्शन एवं दर्शन समय",
+    event_3_date: "प्रतिदिन (14 सितम्बर – 17 सितम्बर)",
+    event_3_time: "⬥ प्रातः 10:00 से रात्रि 10:00 बजे तक",
     event_4_title: "विसर्जन",
     event_4_date: "गुरुवार, 17 सितम्बर 2026",
     event_4_time: "⬥ मुहूर्त अनुसार",
@@ -127,8 +131,6 @@ const TRANSLATIONS = {
     label_regards: "विनीत:",
     host_family: "शाह परिवार",
     label_contact: "संपर्क / RSVP:",
-    label_visiting_hours: "दर्शन समय:",
-    visiting_hours_val: "प्रतिदिन प्रातः 10:00 से रात्रि 10:00 बजे तक",
     btn_back_to_top: "शीर्ष पर जाएं",
 
     // RSVP Modal
@@ -183,6 +185,9 @@ const TRANSLATIONS = {
     event_2_title: "દૈનિક આરતી અને મહાપ્રસાદ",
     event_2_date: "દરરોજ (૧૪ સપ્ટેમ્બર – ૧૬ સપ્ટેમ્બર)",
     event_2_time: "⬥ સવારે: ૧૦:૩૦ વાગ્યે | સાંજે: ૭:૩૦ વાગ્યે (ત્યારબાદ મહાપ્રસાદ)",
+    event_3_title: "દર્શન સમય",
+    event_3_date: "દરરોજ (૧૪ સપ્ટેમ્બર – ૧૭ સપ્ટેમ્બર)",
+    event_3_time: "⬥ સવારે ૧૦:૦૦ થી રાત્રે ૧૦:૦૦ વાગ્યા સુધી",
     event_4_title: "વિસર્જન",
     event_4_date: "ગુરુવાર, ૧૭ સપ્ટેમ્બર ૨૦૨૬",
     event_4_time: "⬥ મુહૂર્ત અનુસાર",
