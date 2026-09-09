@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCalendarBtn.addEventListener("click", () => {
       const eventDetails = {
         title: "Ganesh Chaturthi Celebration - Shah Family",
-        description: "Join the Shah Family in celebrating Ganesh Chaturthi with Aarti, Darshan & Maha Prasad. Ganpati Bappa Morya!",
+        description: "Join the Shah Family in celebrating Ganesh Chaturthi with Aarti, Darshan & Prasad. Ganpati Bappa Morya!",
         location: "Shree Ganesh Kripa, 108 Temple Street, Mumbai - 400001",
         start: "20260905T093000",
         end: "20260905T213000"
