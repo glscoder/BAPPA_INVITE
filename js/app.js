@@ -31,19 +31,60 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // --- Page 1 Reveal Sequence (Triggered after selecting language) ---
+  function startPageOneReveal(selectedLang) {
+    if (selectedLang && typeof window.setAppLanguage === "function") {
+      window.setAppLanguage(selectedLang);
+    }
+
+    // Start devotional audio (Tanpura + Flute + Temple Bell)
+    if (window.sacredAudio) {
+      window.sacredAudio.start();
+    }
+
+    // Trigger one-shot flower shower that falls once from up to down and vanishes
+    if (window.festiveParticles && window.festiveParticles.isOnFirstPage) {
+      window.festiveParticles.triggerFirstPageShower();
+    }
+
+    // Reveal hero content & trigger sequential element landing animations
+    const heroSection = document.getElementById("heroSection");
+    if (heroSection) {
+      heroSection.classList.add("doors-opened");
+    }
+
+    const heroContent = document.getElementById("heroContent");
+    if (heroContent) {
+      heroContent.classList.add("revealed");
+    }
+
+    // Scroll prompt pulse
+    if (scrollPrompt) {
+      scrollPrompt.classList.add("visible");
+    }
+
+    // Aesthetic audio mute notification beside bell button
+    setTimeout(() => {
+      const audioHint = document.getElementById("audioHintTooltip");
+      if (audioHint) {
+        audioHint.classList.add("show");
+        // Auto fade out after 5.5 seconds
+        setTimeout(() => {
+          audioHint.classList.remove("show");
+        }, 5500);
+      }
+    }, 1200);
+
+    closeGuideModal();
+  }
+
   // Interactive Parchment Language Choice Buttons (English, Hindi, Gujarati)
   const parchmentLangBtns = document.querySelectorAll(".parchment-lang-btn");
   parchmentLangBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
-      const lang = btn.getAttribute("data-lang");
-      if (lang && typeof window.setAppLanguage === "function") {
-        window.setAppLanguage(lang);
-        if (window.sacredAudio) {
-          window.sacredAudio.playSoftTransitionTone();
-        }
-      }
-      closeGuideModal();
+      const lang = btn.getAttribute("data-lang") || "en";
+      startPageOneReveal(lang);
     });
   });
 
@@ -67,20 +108,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- Open Invitation Sequence ---
+  // --- Open Invitation Sequence (Door opening & Language Modal Prompt) ---
   function openInvitation() {
     if (invitationOpened) return;
     invitationOpened = true;
-
-    // Start devotional audio (Tanpura + Flute + Temple Bell)
-    if (window.sacredAudio) {
-      window.sacredAudio.start();
-    }
-
-    // Trigger one-shot flower shower that falls once from up to down and vanishes
-    if (window.festiveParticles && window.festiveParticles.isOnFirstPage) {
-      window.festiveParticles.triggerFirstPageShower();
-    }
 
     // Trigger door parting animation
     if (doorCurtain) {
@@ -90,40 +121,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1400);
     }
 
-    // Reveal hero content & trigger sequential element landing
-    const heroSection = document.getElementById("heroSection");
-    if (heroSection) {
-      heroSection.classList.add("doors-opened");
-    }
-
-    const heroContent = document.getElementById("heroContent");
-    if (heroContent) {
-      heroContent.classList.add("revealed");
-    }
-
-    // Scroll prompt pulse
-    if (scrollPrompt) {
-      scrollPrompt.classList.add("visible");
-    }
-
-    // Show Royal Parchment Guide Note Modal after 0.5s
+    // Show Royal Parchment Guide Note Modal after 0.5s for language choice
     setTimeout(() => {
       if (guideScrollModal) {
         guideScrollModal.classList.add("active");
       }
     }, 500);
-
-    // Aesthetic audio mute notification beside bell button
-    setTimeout(() => {
-      const audioHint = document.getElementById("audioHintTooltip");
-      if (audioHint) {
-        audioHint.classList.add("show");
-        // Auto fade out after 5.5 seconds
-        setTimeout(() => {
-          audioHint.classList.remove("show");
-        }, 5500);
-      }
-    }, 1800);
   }
 
   if (openInviteBtn) {
