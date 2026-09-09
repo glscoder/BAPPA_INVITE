@@ -2520,9 +2520,9 @@ body {
   align-items: center;
   justify-content: center;
   color: #FFEBB5;
-  text-shadow: 0 1px 2px rgba(40, 10, 5, 0.9);
-  font-size: 0.65rem;
-  font-weight: 700;
+  text-shadow: 0 1px 1px rgba(40, 10, 5, 0.7);
+  font-size: 0.62rem;
+  font-weight: 500;
   line-height: 1;
   pointer-events: none;
   z-index: 3;
@@ -2531,7 +2531,7 @@ body {
 .parchment-pill-en {
   top: 53.2%;
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .parchment-pill-hi {
@@ -2558,32 +2558,35 @@ body {
   align-items: center;
   justify-content: center;
   color: #FFF0C2;
-  text-shadow: 0 1px 2px rgba(40, 10, 5, 0.95);
+  text-shadow: 0 1px 1px rgba(40, 10, 5, 0.75);
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .parchment-lang-btn span {
   display: inline-block;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.3px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
   line-height: 1;
   pointer-events: none;
 }
 
 .parchment-lang-en span {
   font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 
 .parchment-lang-hi span {
   font-family: 'Noto Sans Devanagari', 'Nirmala UI', sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.80rem;
+  font-weight: 500;
 }
 
 .parchment-lang-gu span {
   font-family: 'Noto Sans Gujarati', 'Shruti', 'Nirmala UI', sans-serif;
-  font-size: 0.86rem;
+  font-size: 0.80rem;
+  font-weight: 500;
 }
 
 .parchment-lang-btn:hover {
