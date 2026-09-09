@@ -106,12 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollPrompt.classList.add("visible");
     }
 
-    // Show Royal Parchment Guide Note Modal after 0.7s
+    // Show Royal Parchment Guide Note Modal after 0.6s
     setTimeout(() => {
       if (guideScrollModal) {
         guideScrollModal.classList.add("active");
       }
-    }, 700);
+    }, 600);
 
     // Aesthetic audio mute notification beside bell button
     setTimeout(() => {
