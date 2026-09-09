@@ -33,11 +33,11 @@
     content="Join our Ganesh Darshan celebration. View darshan timings, aarti schedule, and location.">
   <meta name="twitter:image" content="assets/images/og-preview.png">
 
-  <!-- Premium Typography (Marcellus, Playfair Display Bold/Heavy, Cinzel Decorative, Rozha One, Montserrat) -->
+  <!-- Premium Typography (Marcellus, Playfair Display Bold/Heavy, Cinzel Decorative, Rozha One, Montserrat, Noto Sans Devanagari & Gujarati) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Marcellus&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&family=Rozha+One&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Marcellus&family=Montserrat:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Playfair+Display:wght@700;800;900&family=Rozha+One&display=swap"
     rel="stylesheet">
 
   <!-- Stylesheets -->
@@ -54,11 +54,23 @@
   <main class="viewport-stage">
     <div class="mobile-frame" id="invitationContainer">
 
-      <!-- Floating Sacred Music Toggle Button -->
-      <button class="floating-audio-btn" id="audioToggleBtn" title="Toggle Sacred Music"
-        aria-label="Toggle devotional music">
-        <img src="assets/images/bell.svg" alt="Devotional Bell" width="24" height="24">
-      </button>
+      <!-- Floating Sacred Action Bar (Language Switcher & Audio Toggle) -->
+      <header class="floating-controls-bar" id="floatingControlsBar">
+        <!-- Sacred Language Quick Switcher -->
+        <div class="floating-lang-cluster" role="group" aria-label="Select Language">
+          <button class="lang-btn active" data-lang="en" type="button" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="hi" type="button" aria-label="हिन्दी">हिं</button>
+          <button class="lang-btn" data-lang="gu" type="button" aria-label="ગુજરાતી">ગુ</button>
+        </div>
+
+        <div class="floating-actions-cluster">
+          <!-- Floating Sacred Music Toggle Button -->
+          <button class="floating-icon-btn floating-audio-btn" id="audioToggleBtn" title="Toggle Sacred Music"
+            aria-label="Toggle devotional music">
+            <img src="assets/images/bell.svg" alt="Devotional Bell" width="22" height="22">
+          </button>
+        </div>
+      </header>
 
       <!-- 3D Temple Doors Parting Curtain -->
       <div class="temple-curtain" id="doorCurtain" role="dialog" aria-label="Temple entrance doors">
@@ -104,8 +116,8 @@
 
           <!-- Auspicious Sanskrit Shloka at Top -->
           <div class="hero-shloka-header">
-            <div class="shloka-ornament-top">❖ || श्री गणेशाय नमः || ❖</div>
-            <div class="shloka-sanskrit-top">
+            <div class="shloka-ornament-top" data-i18n="shloka_header">❖ || श्री गणेशाय नमः || ❖</div>
+            <div class="shloka-sanskrit-top" data-i18n="shloka_verse">
               वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br>
               निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
             </div>
@@ -126,20 +138,20 @@
 
           <!-- Main Announcement Heading & Date Ribbon -->
           <div class="hero-invite-header">
-            <h1 class="calligraphy-title">Bappa's Coming Home</h1>
-            <div class="hindi-tagline">॥ बाप्पा घर आ रहे हैं ॥</div>
+            <h1 class="calligraphy-title" data-i18n="hero_title">Bappa's Coming Home</h1>
+            <div class="hindi-tagline" data-i18n="hero_tagline">॥ बाप्पा घर आ रहे हैं ॥</div>
 
             <!-- Royal Event Date & Time Capsule with Integrated Scroll Indicator -->
             <div class="hero-date-capsule" id="scrollPrompt">
-              <div class="event-date-badge">ON MONDAY, 14TH SEPTEMBER 2026</div>
+              <div class="event-date-badge" data-i18n="event_date">ON MONDAY, 14TH SEPTEMBER 2026</div>
               <div class="event-time-badge">
-                <span class="badge-segment">AARTI — 7:30 PM ONWARDS</span>
+                <span class="badge-segment" data-i18n="event_time_aarti">AARTI — 7:30 PM ONWARDS</span>
                 <span class="badge-bullet">•</span>
-                <span class="badge-segment">FOLLOWED BY PRASAD</span>
+                <span class="badge-segment" data-i18n="event_time_prasad">FOLLOWED BY PRASAD</span>
               </div>
               <div class="capsule-scroll-hint">
                 <span class="finger-swipe-icon">👇</span>
-                <span>Scroll Down For Schedule &amp; Venue</span>
+                <span data-i18n="scroll_hint">Scroll Down For Schedule &amp; Venue</span>
                 <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
                   stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>
@@ -164,10 +176,10 @@
           <div class="content-card welcome-card scroll-reveal">
             <!-- Shloka Box -->
             <div class="shloka-box">
-              <div class="sanskrit-verse">
+              <div class="sanskrit-verse" data-i18n="welcome_shloka_main">
                 ॐ गं गणपतये नमः
               </div>
-              <div class="verse-english">
+              <div class="verse-english" data-i18n="welcome_shloka_meaning">
                 "May Lord Ganesha bestow joy, auspiciousness, peace, and good health upon you and your family."
               </div>
             </div>
@@ -182,7 +194,7 @@
                 <video id="selfieCameraVideo" autoplay playsinline muted></video>
                 <div class="camera-fallback-placeholder" id="cameraFallback">
                   <span class="camera-lens-icon">✨</span>
-                  <span class="camera-tap-hint">Tap For Live Mirror</span>
+                  <span class="camera-tap-hint" data-i18n="camera_fallback_hint">Tap For Live Mirror</span>
                 </div>
               </div>
 
@@ -193,7 +205,7 @@
               <!-- Interactive Mirror & Flip Camera Controls -->
               <div class="camera-controls-cluster">
                 <button class="camera-toggle-btn" id="cameraToggleBtn" type="button" title="Open camera mirror">
-                  <span class="camera-btn-icon">📷</span> <span id="cameraBtnLabel">See Yourself</span>
+                  <span class="camera-btn-icon">📷</span> <span id="cameraBtnLabel" data-i18n="camera_btn_see">See Yourself</span>
                 </button>
                 <button class="camera-flip-btn" id="cameraFlipBtn" type="button" title="Flip Camera"
                   aria-label="Flip Camera">
@@ -204,13 +216,13 @@
               </div>
             </div>
 
-            <h2 class="family-title">You are Invited</h2>
+            <h2 class="family-title" data-i18n="welcome_title">You are Invited</h2>
             <div class="welcome-card-divider" aria-hidden="true"></div>
 
-            <p class="invite-message">
+            <p class="invite-message" data-i18n="welcome_msg_1">
               We cordially invite you &amp; your family to grace our home and join us in celebrating Ganesh Utsav.
             </p>
-            <p class="invite-message highlight-blessing">
+            <p class="invite-message highlight-blessing" data-i18n="welcome_msg_2">
               With the supreme grace of <strong>Vighnaharta Lord Ganesha</strong>, your auspicious presence will double
               our festive joy!
             </p>
@@ -233,8 +245,8 @@
         <section class="invitation-page schedule-page-section" id="scheduleSection">
           <!-- Section Header with Mooshak Holding Utsav Schedule Board -->
           <div class="section-header-wrap scroll-reveal">
-            <div class="schedule-ornament-header">❖ || उत्सव रूपरेखा || ❖</div>
-            <div class="section-label">Auspicious Timings</div>
+            <div class="schedule-ornament-header" data-i18n="schedule_header_ornament">❖ || उत्सव रूपरेखा || ❖</div>
+            <div class="section-label" data-i18n="schedule_section_label">Auspicious Timings</div>
             <div class="schedule-mooshak-board-stage">
               <div class="schedule-board-glow" aria-hidden="true"></div>
               <img src="assets/images/mooshak-schedule-sign.png" alt="Mooshak Holding Utsav Schedule"
@@ -253,11 +265,11 @@
                   <img src="assets/images/icon-aagman.svg" alt="Bappa's Aagman">
                 </div>
                 <div class="schedule-info">
-                  <div class="schedule-event-title">Bappa's Aagman &amp; Sthapana</div>
+                  <div class="schedule-event-title" data-i18n="event_1_title">Bappa's Aagman &amp; Sthapana</div>
                   <div class="schedule-date-ribbon">
-                    <span class="ribbon-text">Monday, September 14, 2026</span>
+                    <span class="ribbon-text" data-i18n="event_1_date">Monday, September 14, 2026</span>
                   </div>
-                  <div class="schedule-timing">
+                  <div class="schedule-timing" data-i18n="event_1_time">
                     <span class="timing-bullet">⬥</span> Murti Sthapana: 09:30 AM – 11:30 AM
                   </div>
                 </div>
@@ -269,11 +281,11 @@
                   <img src="assets/images/icon-aarti.svg" alt="Daily Maha Aarti">
                 </div>
                 <div class="schedule-info">
-                  <div class="schedule-event-title">Daily Maha Aarti</div>
+                  <div class="schedule-event-title" data-i18n="event_2_title">Daily Maha Aarti</div>
                   <div class="schedule-date-ribbon">
-                    <span class="ribbon-text">Every Day (Sept 14 – Sept 18)</span>
+                    <span class="ribbon-text" data-i18n="event_2_date">Every Day (Sept 14 – Sept 18)</span>
                   </div>
-                  <div class="schedule-timing">
+                  <div class="schedule-timing" data-i18n="event_2_time">
                     <span class="timing-bullet">⬥</span> Morning: 8:00 AM | Evening: 7:30 PM
                   </div>
                 </div>
@@ -285,11 +297,11 @@
                   <img src="assets/images/icon-prasad.svg" alt="Modak Bhog &amp; Maha Prasad">
                 </div>
                 <div class="schedule-info">
-                  <div class="schedule-event-title">Modak Bhog &amp; Maha Prasad</div>
+                  <div class="schedule-event-title" data-i18n="event_3_title">Modak Bhog &amp; Maha Prasad</div>
                   <div class="schedule-date-ribbon">
-                    <span class="ribbon-text">Daily Post Evening Aarti</span>
+                    <span class="ribbon-text" data-i18n="event_3_date">Daily Post Evening Aarti</span>
                   </div>
-                  <div class="schedule-timing">
+                  <div class="schedule-timing" data-i18n="event_3_time">
                     <span class="timing-bullet">⬥</span> Dinner Prasad: 8:30 PM Onwards
                   </div>
                 </div>
@@ -301,11 +313,11 @@
                   <img src="assets/images/icon-visarjan.svg" alt="Eco-Friendly Visarjan">
                 </div>
                 <div class="schedule-info">
-                  <div class="schedule-event-title">Eco-Friendly Visarjan</div>
+                  <div class="schedule-event-title" data-i18n="event_4_title">Eco-Friendly Visarjan</div>
                   <div class="schedule-date-ribbon">
-                    <span class="ribbon-text">Friday, September 18, 2026</span>
+                    <span class="ribbon-text" data-i18n="event_4_date">Friday, September 18, 2026</span>
                   </div>
-                  <div class="schedule-timing">
+                  <div class="schedule-timing" data-i18n="event_4_time">
                     <span class="timing-bullet">⬥</span> Uttarpuja &amp; Farewell: 05:00 PM
                   </div>
                 </div>
@@ -336,7 +348,7 @@
                 class="venue-presence-banner-img" width="1024" height="409">
             </div>
 
-            <div class="venue-ornament-header">❖ || उत्सव निवास || ❖</div>
+            <div class="venue-ornament-header" data-i18n="venue_header_ornament">❖ || उत्सव निवास || ❖</div>
             <div class="venue-mooshak-board-stage">
               <div class="venue-board-glow" aria-hidden="true"></div>
               <img src="assets/images/mooshak-venue-sign.png" alt="Mooshak Holding Festive Residence Board"
@@ -345,12 +357,12 @@
           </div>
 
           <div class="venue-card scroll-reveal">
-            <h2 class="venue-name">Aakruti Heights</h2>
+            <h2 class="venue-name" data-i18n="venue_name">Aakruti Heights</h2>
             <div class="venue-title-filigree" aria-hidden="true"></div>
 
             <!-- Address Box -->
             <div class="venue-address-box">
-              <p class="venue-address">
+              <p class="venue-address" data-i18n="venue_address">
                 Flat No. 104 , Aakruti Heights , Opp Aangan Party Plot , Near Prernatirth Derasar, Jodhpur Cross Road,
                 Ahmedabad, Gujarat 380015
               </p>
@@ -362,7 +374,7 @@
                 <path
                   d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
               </svg>
-              <span>Get Directions on Google Maps</span>
+              <span data-i18n="btn_directions">Get Directions on Google Maps</span>
             </a>
           </div>
 
@@ -373,7 +385,7 @@
               target="_blank" rel="noopener noreferrer" class="whatsapp-rsvp-btn whatsapp-full-btn"
               id="whatsappRsvpBtn">
               <img src="assets/images/whatsapp.svg" alt="WhatsApp" class="whatsapp-btn-icon" width="24" height="24">
-              <span>Let Us Know on WhatsApp</span>
+              <span data-i18n="btn_whatsapp">Let Us Know on WhatsApp</span>
             </a>
           </div>
 
@@ -400,7 +412,7 @@
             </div>
 
             <!-- Sacred Jaikara Calligraphy -->
-            <h2 class="closing-jaikara">
+            <h2 class="closing-jaikara" data-i18n="closing_jaikara">
               गणपती बाप्पा मोरया !<br>
               मंगलमूर्ती मोरया !
             </h2>
@@ -409,7 +421,7 @@
             <div class="closing-title-filigree" aria-hidden="true"></div>
 
             <!-- Divine Blessing Message -->
-            <p class="closing-signoff">
+            <p class="closing-signoff" data-i18n="closing_signoff">
               May Lord Ganesha remove all obstacles and bestow abundant health, prosperity, peace, and wisdom upon you
               and your family.
             </p>
@@ -417,16 +429,16 @@
             <!-- Host, Contact & Visiting Details Capsule -->
             <div class="contact-pill-box">
               <div class="contact-pill-item host-item">
-                <span class="pill-label">Warm Regards:</span>
-                <strong class="pill-value host-name-highlight">The Shah Family</strong>
+                <span class="pill-label" data-i18n="label_regards">Warm Regards:</span>
+                <strong class="pill-value host-name-highlight" data-i18n="host_family">The Shah Family</strong>
               </div>
               <div class="contact-pill-item">
-                <span class="pill-label">RSVP / Contact:</span>
+                <span class="pill-label" data-i18n="label_contact">RSVP / Contact:</span>
                 <a href="tel:+918469032599" class="pill-value contact-link">+91 84690 32599</a>
               </div>
               <div class="contact-pill-item">
-                <span class="pill-label">Visiting Hours:</span>
-                <span class="pill-value">10:00 AM to 10:00 PM Daily</span>
+                <span class="pill-label" data-i18n="label_visiting_hours">Visiting Hours:</span>
+                <span class="pill-value" data-i18n="visiting_hours_val">10:00 AM to 10:00 PM Daily</span>
               </div>
             </div>
 
@@ -436,7 +448,7 @@
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="18 15 12 9 6 15"></polyline>
               </svg>
-              <span>Back to Top</span>
+              <span data-i18n="btn_back_to_top">Back to Top</span>
             </button>
           </div>
 
@@ -456,27 +468,27 @@
       <button class="modal-close-btn" id="closeRsvpBtn" aria-label="Close dialog">&times;</button>
 
       <form id="rsvpForm">
-        <h3 class="modal-title" id="rsvpModalTitle">Join the Celebration</h3>
-        <p class="modal-subtitle">Let us know if you can join us so we can prepare Prasad!</p>
+        <h3 class="modal-title" id="rsvpModalTitle" data-i18n="rsvp_title">Join the Celebration</h3>
+        <p class="modal-subtitle" data-i18n="rsvp_subtitle">Let us know if you can join us so we can prepare Prasad!</p>
 
         <div class="rsvp-form-group">
-          <label for="guestName">Your Full Name</label>
-          <input type="text" id="guestName" placeholder="e.g. Ramesh & Sunita Patel" required>
+          <label for="guestName" data-i18n="label_guest_name">Your Full Name</label>
+          <input type="text" id="guestName" placeholder="e.g. Ramesh & Sunita Patel" data-i18n-ph="ph_guest_name" required>
         </div>
 
         <div class="rsvp-form-group">
-          <label for="guestCount">Number of Guests</label>
+          <label for="guestCount" data-i18n="label_guest_count">Number of Guests</label>
           <select id="guestCount">
-            <option value="1">1 Person</option>
-            <option value="2" selected>2 Persons</option>
-            <option value="3">3 Persons</option>
-            <option value="4">4 Persons</option>
-            <option value="5+">5+ Family Members</option>
+            <option value="1" data-i18n="opt_1_person">1 Person</option>
+            <option value="2" selected data-i18n="opt_2_persons">2 Persons</option>
+            <option value="3" data-i18n="opt_3_persons">3 Persons</option>
+            <option value="4" data-i18n="opt_4_persons">4 Persons</option>
+            <option value="5+" data-i18n="opt_5_persons">5+ Family Members</option>
           </select>
         </div>
 
         <div class="rsvp-form-group">
-          <label for="attendingDay">Preferred Visiting Time</label>
+          <label for="attendingDay" data-i18n="label_visiting_day">Preferred Visiting Time</label>
           <select id="attendingDay">
             <option value="sep5">Saturday, Sept 5 (Sthapana)</option>
             <option value="sep6">Sunday, Sept 6 (Maha Aarti)</option>
@@ -487,24 +499,25 @@
         </div>
 
         <div class="rsvp-form-group">
-          <label for="guestWishes">Warm Wishes for Bappa (Optional)</label>
-          <textarea id="guestWishes" rows="2" placeholder="Send blessings or wishes to the host family..."></textarea>
+          <label for="guestWishes" data-i18n="label_wishes">Warm Wishes for Bappa (Optional)</label>
+          <textarea id="guestWishes" rows="2" placeholder="Send blessings or wishes to the host family..." data-i18n-ph="ph_wishes"></textarea>
         </div>
 
         <button type="submit" class="rsvp-submit-btn">
-          <span>Confirm Attendance 🙏</span>
+          <span data-i18n="btn_confirm_attendance">Confirm Attendance 🙏</span>
         </button>
       </form>
 
       <div class="rsvp-success-box" id="rsvpSuccessMsg">
         <img src="assets/images/modak.svg" alt="Modak Prasad">
-        <h4>धन्यवाद ! RSVP Confirmed</h4>
-        <p>Your blessings have been received. We eagerly look forward to welcoming you with Ganpati Bappa's Prasad!</p>
+        <h4 data-i18n="rsvp_success_title">धन्यवाद ! RSVP Confirmed</h4>
+        <p data-i18n="rsvp_success_desc">Your blessings have been received. We eagerly look forward to welcoming you with Ganpati Bappa's Prasad!</p>
       </div>
     </div>
   </div>
 
-  <!-- Audio Engine & Interactive Logic -->
+  <!-- Audio Engine, Multi-Language & Interactive Logic -->
+  <script src="js/translations.js"></script>
   <script src="js/audio.js"></script>
   <script src="js/petals.js"></script>
   <script src="js/app.js"></script>

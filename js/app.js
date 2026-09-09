@@ -24,6 +24,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let invitationOpened = false;
 
+  // --- Multi-Language Engine Initialization (English, Hindi, Gujarati) ---
+  const initialLang = localStorage.getItem("bappa_invite_lang") || "en";
+  if (typeof window.setAppLanguage === "function") {
+    window.setAppLanguage(initialLang);
+  }
+
+  const langButtons = document.querySelectorAll(".lang-btn");
+  langButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const lang = btn.getAttribute("data-lang");
+      if (lang && typeof window.setAppLanguage === "function") {
+        window.setAppLanguage(lang);
+        if (window.sacredAudio) {
+          window.sacredAudio.playTempleBellChime();
+        }
+      }
+    });
+  });
+
   // --- Open Invitation Sequence ---
   function openInvitation() {
     if (invitationOpened) return;
@@ -476,11 +496,15 @@ document.addEventListener("DOMContentLoaded", () => {
           cameraVideo.classList.remove("back-facing");
         }
         if (cameraFallback) cameraFallback.style.display = "none";
-        if (cameraBtnLabel) cameraBtnLabel.textContent = "Camera On ✨";
+        const currentLang = localStorage.getItem("bappa_invite_lang") || "en";
+        const dict = window.TRANSLATIONS?.[currentLang] || window.TRANSLATIONS?.en;
+        if (cameraBtnLabel) cameraBtnLabel.textContent = dict?.camera_btn_on || "Camera On ✨";
       }
     } catch (err) {
       console.warn("Camera access was declined or unavailable:", err);
-      if (cameraBtnLabel) cameraBtnLabel.textContent = "Enable Mirror";
+      const currentLang = localStorage.getItem("bappa_invite_lang") || "en";
+      const dict = window.TRANSLATIONS?.[currentLang] || window.TRANSLATIONS?.en;
+      if (cameraBtnLabel) cameraBtnLabel.textContent = dict?.camera_btn_enable || "Enable Mirror";
     } finally {
       isCameraStarting = false;
     }
@@ -499,7 +523,9 @@ document.addEventListener("DOMContentLoaded", () => {
       cameraFallback.style.display = "flex";
     }
     if (cameraBtnLabel) {
-      cameraBtnLabel.textContent = "See Yourself";
+      const currentLang = localStorage.getItem("bappa_invite_lang") || "en";
+      const dict = window.TRANSLATIONS?.[currentLang] || window.TRANSLATIONS?.en;
+      cameraBtnLabel.textContent = dict?.camera_btn_see || "See Yourself";
     }
   }
 
