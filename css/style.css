@@ -2475,55 +2475,92 @@ body {
   z-index: 1;
 }
 
-/* Close button on top-right of the parchment */
-.parchment-close-btn {
+/* 3 Small Visual Indicator Pills in Box 2 (EN | हिं | ગુ) */
+.parchment-pill-label {
   position: absolute;
-  top: 3.5%;
-  right: 5%;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: rgba(90, 20, 10, 0.92);
-  border: 1.5px solid #F59E0B;
-  color: #FFFDF9;
-  font-size: 1.3rem;
-  line-height: 1;
+  left: 27.2%;
+  width: 10.2%;
+  height: 2.3%;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
-  transition: all 0.2s ease;
+  color: #FFEBB5;
+  text-shadow: 0 1px 2px rgba(40, 10, 5, 0.9);
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 3;
 }
 
-.parchment-close-btn:hover {
-  background: var(--color-saffron);
-  transform: scale(1.1);
+.parchment-pill-en {
+  top: 53.2%;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.5px;
 }
 
-/* 3 Interactive Language Overlay Buttons (Matching bottom 3 button slots) */
+.parchment-pill-hi {
+  top: 56.3%;
+  font-family: 'Noto Sans Devanagari', 'Nirmala UI', sans-serif;
+}
+
+.parchment-pill-gu {
+  top: 59.4%;
+  font-family: 'Noto Sans Gujarati', 'Shruti', 'Nirmala UI', sans-serif;
+}
+
+/* 3 Mandatory Interactive Language Overlay Buttons (English, हिन्दी, ગુજરાતી) */
 .parchment-lang-btn {
   position: absolute;
   top: 79.1%;
   height: 3.8%;
-  background: transparent;
-  border: 1.5px solid transparent;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 215, 0, 0.35);
   border-radius: 20px;
   cursor: pointer;
   z-index: 5;
-  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF0C2;
+  text-shadow: 0 1px 2px rgba(40, 10, 5, 0.95);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.parchment-lang-btn span {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.parchment-lang-en span {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.parchment-lang-hi span {
+  font-family: 'Noto Sans Devanagari', 'Nirmala UI', sans-serif;
+  font-size: 0.88rem;
+}
+
+.parchment-lang-gu span {
+  font-family: 'Noto Sans Gujarati', 'Shruti', 'Nirmala UI', sans-serif;
+  font-size: 0.86rem;
 }
 
 .parchment-lang-btn:hover {
-  background: rgba(255, 235, 175, 0.2);
-  border-color: rgba(255, 215, 0, 0.7);
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.45);
-  transform: scale(1.05);
+  background: rgba(255, 235, 175, 0.25);
+  border-color: rgba(255, 225, 120, 0.9);
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.6), inset 0 0 8px rgba(255, 235, 175, 0.3);
+  transform: scale(1.06);
+  color: #FFFFFF;
 }
 
 .parchment-lang-btn:active {
-  transform: scale(0.96);
+  transform: scale(0.95);
 }
 
 /* Exact Left/Center/Right positions matching image maroon button regions */

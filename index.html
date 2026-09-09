@@ -463,18 +463,27 @@
     </div>
   </main>
 
-  <!-- Royal Parchment Guide Note Modal (Shown on Door Open) -->
+  <!-- Royal Parchment Guide Note Modal (Mandatory Language Selection on Door Open) -->
   <div class="guide-scroll-backdrop" id="guideScrollModal" role="dialog" aria-modal="true" aria-label="Welcome Guide Note">
     <div class="parchment-scroll-container">
-      <button class="parchment-close-btn" id="closeGuideScrollBtn" aria-label="Close guide note">&times;</button>
-      
-      <!-- High-res Royal Parchment Scroll Image with baked text -->
+      <!-- High-res Royal Parchment Scroll Image -->
       <img src="assets/images/parchment-scroll.png" alt="Royal Parchment Guide" class="parchment-bg-img">
 
-      <!-- 3 Interactive Language Overlay Buttons (English, Hindi, Gujarati) -->
-      <button class="parchment-lang-btn parchment-lang-en" id="guideLangEnBtn" data-lang="en" type="button" aria-label="Choose English"></button>
-      <button class="parchment-lang-btn parchment-lang-hi" id="guideLangHiBtn" data-lang="hi" type="button" aria-label="Choose Hindi"></button>
-      <button class="parchment-lang-btn parchment-lang-gu" id="guideLangGuBtn" data-lang="gu" type="button" aria-label="Choose Gujarati"></button>
+      <!-- 3 Small Visual Language Indicator Pills in Box 2 -->
+      <div class="parchment-pill-label parchment-pill-en" aria-hidden="true">EN</div>
+      <div class="parchment-pill-label parchment-pill-hi" aria-hidden="true">हिं</div>
+      <div class="parchment-pill-label parchment-pill-gu" aria-hidden="true">ગુ</div>
+
+      <!-- 3 Mandatory Interactive Language Buttons (English, Hindi, Gujarati) -->
+      <button class="parchment-lang-btn parchment-lang-en" id="guideLangEnBtn" data-lang="en" type="button" aria-label="Choose English">
+        <span>English</span>
+      </button>
+      <button class="parchment-lang-btn parchment-lang-hi" id="guideLangHiBtn" data-lang="hi" type="button" aria-label="Choose Hindi">
+        <span>हिन्दी</span>
+      </button>
+      <button class="parchment-lang-btn parchment-lang-gu" id="guideLangGuBtn" data-lang="gu" type="button" aria-label="Choose Gujarati">
+        <span>ગુજરાતી</span>
+      </button>
     </div>
   </div>
 

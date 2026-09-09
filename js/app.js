@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainCardContainer = document.getElementById("invitationContainer");
   const audioToggleBtn = document.getElementById("audioToggleBtn");
   const guideScrollModal = document.getElementById("guideScrollModal");
-  const closeGuideScrollBtn = document.getElementById("closeGuideScrollBtn");
   const rsvpModal = document.getElementById("rsvpModal");
   const openRsvpBtn = document.getElementById("openRsvpBtn");
   const closeRsvpBtn = document.getElementById("closeRsvpBtn");
@@ -30,17 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (guideScrollModal) {
       guideScrollModal.classList.remove("active");
     }
-  }
-
-  if (closeGuideScrollBtn) {
-    closeGuideScrollBtn.addEventListener("click", closeGuideModal);
-  }
-  if (guideScrollModal) {
-    guideScrollModal.addEventListener("click", (e) => {
-      if (e.target === guideScrollModal) {
-        closeGuideModal();
-      }
-    });
   }
 
   // Interactive Parchment Language Choice Buttons (English, Hindi, Gujarati)
