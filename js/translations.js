@@ -1,6 +1,6 @@
 /**
  * Multi-Language Translations Dictionary & Engine
- * Supports: English (en), Hindi (hi), Gujarati (gu), Marathi (mr)
+ * Supports: English (en), Hindi (hi), Gujarati (gu)
  */
 
 const TRANSLATIONS = {
