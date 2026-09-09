@@ -37,11 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       window.setAppLanguage(selectedLang);
     }
 
-    // Start devotional audio (Tanpura + Flute + Temple Bell)
-    if (window.sacredAudio) {
-      window.sacredAudio.start();
-    }
-
     // Trigger one-shot flower shower that falls once from up to down and vanishes
     if (window.festiveParticles && window.festiveParticles.isOnFirstPage) {
       window.festiveParticles.triggerFirstPageShower();
@@ -112,6 +107,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function openInvitation() {
     if (invitationOpened) return;
     invitationOpened = true;
+
+    // Start devotional audio (Tanpura + Flute + Temple Bell) immediately on door tap
+    if (window.sacredAudio) {
+      window.sacredAudio.start();
+    }
 
     // Trigger door parting animation
     if (doorCurtain) {
