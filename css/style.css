@@ -2600,8 +2600,10 @@ html[lang="gu"] .calligraphy-title {
   position: absolute;
   top: 79.1%;
   height: 3.8%;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 215, 0, 0.35);
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
   border-radius: 20px;
   cursor: pointer;
   z-index: 5;
@@ -2609,46 +2611,46 @@ html[lang="gu"] .calligraphy-title {
   align-items: center;
   justify-content: center;
   color: #FFF0C2;
-  text-shadow: 0 1px 1px rgba(40, 10, 5, 0.75);
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 2px rgba(30, 8, 4, 0.85);
+  transition: all 0.2s ease;
+  padding: 0;
 }
 
 .parchment-lang-btn span {
   display: inline-block;
-  font-size: 0.76rem;
+  font-size: 0.70rem;
   font-weight: 500;
   letter-spacing: 0.2px;
   line-height: 1;
   pointer-events: none;
+  transition: all 0.2s ease;
 }
 
 .parchment-lang-en span {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  font-size: 0.69rem;
 }
 
 .parchment-lang-hi span {
   font-family: 'Noto Sans Devanagari', 'Nirmala UI', sans-serif;
-  font-size: 0.80rem;
+  font-size: 0.74rem;
   font-weight: 500;
 }
 
 .parchment-lang-gu span {
   font-family: 'Noto Sans Gujarati', 'Shruti', 'Nirmala UI', sans-serif;
-  font-size: 0.80rem;
+  font-size: 0.74rem;
   font-weight: 500;
 }
 
-.parchment-lang-btn:hover {
-  background: rgba(255, 235, 175, 0.25);
-  border-color: rgba(255, 225, 120, 0.9);
-  box-shadow: 0 0 14px rgba(255, 215, 0, 0.6), inset 0 0 8px rgba(255, 235, 175, 0.3);
-  transform: scale(1.06);
+.parchment-lang-btn:hover span {
   color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(255, 235, 175, 0.95), 0 0 16px rgba(245, 158, 11, 0.8);
+  transform: scale(1.08);
 }
 
-.parchment-lang-btn:active {
+.parchment-lang-btn:active span {
   transform: scale(0.95);
 }
 
