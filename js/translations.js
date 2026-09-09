@@ -33,7 +33,7 @@ const TRANSLATIONS = {
     schedule_section_label: "Auspicious Timings",
     event_1_title: "Bappa's Aagman & Sthapana",
     event_1_date: "Monday, September 14, 2026",
-    event_1_time: "⬥ Murti Sthapana: 09:30 AM – 11:30 AM",
+    event_1_time: "⬥ According to Muhurat",
     event_2_title: "Daily Aarti",
     event_2_date: "Every Day (Sept 14 – Sept 16)",
     event_2_time: "⬥ Morning: 10:30 AM | Evening: 7:30 PM",
@@ -42,7 +42,7 @@ const TRANSLATIONS = {
     event_3_time: "⬥ Prasad: 8:30 PM Onwards",
     event_4_title: "Visarjan",
     event_4_date: "Thursday, September 17, 2026",
-    event_4_time: "⬥ 05:00 PM",
+    event_4_time: "⬥ According to Muhurat",
 
     // Page 4: Venue & Actions
     venue_header_ornament: "❖ || उत्सव निवास || ❖",
@@ -109,7 +109,7 @@ const TRANSLATIONS = {
     schedule_section_label: "शुभ मुहूर्त व समय",
     event_1_title: "बाप्पा का आगमन एवं स्थापना",
     event_1_date: "सोमवार, 14 सितम्बर 2026",
-    event_1_time: "⬥ मूर्ति स्थापना: प्रातः 09:30 – 11:30 बजे",
+    event_1_time: "⬥ मुहूर्त अनुसार",
     event_2_title: "दैनिक आरती",
     event_2_date: "प्रतिदिन (14 सितम्बर – 16 सितम्बर)",
     event_2_time: "⬥ प्रातः: 10:30 बजे | सायं: 7:30 बजे",
@@ -118,7 +118,7 @@ const TRANSLATIONS = {
     event_3_time: "⬥ प्रसाद: 8:30 बजे से निरंतर",
     event_4_title: "विसर्जन",
     event_4_date: "गुरुवार, 17 सितम्बर 2026",
-    event_4_time: "⬥ सायं 05:00 बजे",
+    event_4_time: "⬥ मुहूर्त अनुसार",
 
     // Page 4: Venue & Actions
     venue_header_ornament: "❖ || उत्सव निवास || ❖",
@@ -185,7 +185,7 @@ const TRANSLATIONS = {
     schedule_section_label: "શુભ મુહૂર્ત અને સમય",
     event_1_title: "બાપ્પાનું આગમન અને સ્થાપના",
     event_1_date: "સોમવાર, ૧૪ સપ્ટેમ્બર ૨૦૨૬",
-    event_1_time: "⬥ મૂર્તિ સ્થાપના: સવારે ૦૯:૩૦ – ૧૧:૩૦ વાગ્યે",
+    event_1_time: "⬥ મુહૂર્ત અનુસાર",
     event_2_title: "દૈનિક આરતી",
     event_2_date: "દરરોજ (૧૪ સપ્ટેમ્બર – ૧૬ સપ્ટેમ્બર)",
     event_2_time: "⬥ સવારે: ૧૦:૩૦ વાગ્યે | સાંજે: ૭:૩૦ વાગ્યે",
@@ -194,7 +194,7 @@ const TRANSLATIONS = {
     event_3_time: "⬥ પ્રસાદ: રાત્રે ૮:૩૦ વાગ્યાથી",
     event_4_title: "વિસર્જન",
     event_4_date: "ગુરુવાર, ૧૭ સપ્ટેમ્બર ૨૦૨૬",
-    event_4_time: "⬥ સાંજે ૦૫:૦૦ વાગ્યે",
+    event_4_time: "⬥ મુહૂર્ત અનુસાર",
 
     // Page 4: Venue & Actions
     venue_header_ornament: "❖ || ઉત્સવ નિવાસ || ❖",
