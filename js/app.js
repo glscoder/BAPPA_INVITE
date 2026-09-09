@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const openInviteBtn = document.getElementById("openInviteBtn");
   const mainCardContainer = document.getElementById("invitationContainer");
   const audioToggleBtn = document.getElementById("audioToggleBtn");
+  const guideScrollModal = document.getElementById("guideScrollModal");
+  const closeGuideScrollBtn = document.getElementById("closeGuideScrollBtn");
+  const proceedGuideScrollBtn = document.getElementById("proceedGuideScrollBtn");
   const rsvpModal = document.getElementById("rsvpModal");
   const openRsvpBtn = document.getElementById("openRsvpBtn");
   const closeRsvpBtn = document.getElementById("closeRsvpBtn");
@@ -23,6 +26,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollPrompt = document.getElementById("scrollPrompt");
 
   let invitationOpened = false;
+
+  function closeGuideModal() {
+    if (guideScrollModal) {
+      guideScrollModal.classList.remove("active");
+    }
+  }
+
+  if (closeGuideScrollBtn) {
+    closeGuideScrollBtn.addEventListener("click", closeGuideModal);
+  }
+  if (proceedGuideScrollBtn) {
+    proceedGuideScrollBtn.addEventListener("click", closeGuideModal);
+  }
+  if (guideScrollModal) {
+    guideScrollModal.addEventListener("click", (e) => {
+      if (e.target === guideScrollModal) {
+        closeGuideModal();
+      }
+    });
+  }
 
   // --- Multi-Language Engine Initialization (English, Hindi, Gujarati) ---
   const initialLang = localStorage.getItem("bappa_invite_lang") || "en";
@@ -83,6 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollPrompt.classList.add("visible");
     }
 
+    // Show Royal Parchment Guide Note Modal right after doors part
+    setTimeout(() => {
+      if (guideScrollModal) {
+        guideScrollModal.classList.add("active");
+      }
+    }, 1200);
+
     // Aesthetic audio mute notification beside bell button
     setTimeout(() => {
       const audioHint = document.getElementById("audioHintTooltip");
@@ -93,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
           audioHint.classList.remove("show");
         }, 5500);
       }
-    }, 1600);
+    }, 1800);
   }
 
   if (openInviteBtn) {
