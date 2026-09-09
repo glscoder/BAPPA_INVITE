@@ -927,31 +927,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(6px, 1.8vw, 12px);
+  gap: clamp(4px, 1.2vw, 8px);
   margin: clamp(4px, 0.8vh, 8px) auto clamp(2px, 0.4vh, 4px);
   width: 100%;
   max-width: 100%;
-  overflow: visible;
+  padding: 0 clamp(10px, 3vw, 18px);
+  box-sizing: border-box;
 }
 
 .hero-title-wing {
   display: inline-flex;
   align-items: center;
   color: #C07A10;
-  font-size: clamp(0.72rem, 1.8vh, 0.92rem);
-  letter-spacing: 2px;
-  opacity: 0.85;
-  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
+  font-size: clamp(0.55rem, 1.3vh, 0.72rem);
+  letter-spacing: 1px;
+  opacity: 0.82;
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.5));
   user-select: none;
   pointer-events: none;
+  flex-shrink: 0;
 }
 
 .calligraphy-title {
   font-family: 'Cinzel Decorative', 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.35rem, 3.5vh, 1.78rem);
+  font-size: clamp(1.05rem, 2.5vh, 1.38rem);
   font-weight: 900;
   line-height: 1.2;
-  letter-spacing: clamp(1.4px, 0.5vw, 2.4px);
+  letter-spacing: clamp(0.6px, 0.25vw, 1.2px);
   text-transform: uppercase;
   background: linear-gradient(135deg, #7B1E10 0%, #B91C1C 35%, #D97706 70%, #7B1E10 100%);
   background-size: 200% auto;
@@ -975,27 +977,27 @@ body {
 /* Indic script specific font styling for maximum festive elegance */
 html[lang="hi"] .calligraphy-title {
   font-family: 'Rozha One', 'Noto Sans Devanagari', serif;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.4px;
   font-weight: 700;
-  font-size: clamp(1.45rem, 3.8vh, 1.9rem);
+  font-size: clamp(1.15rem, 2.7vh, 1.48rem);
 }
 
 html[lang="gu"] .calligraphy-title {
   font-family: 'Rozha One', 'Noto Sans Gujarati', serif;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.4px;
   font-weight: 700;
-  font-size: clamp(1.45rem, 3.8vh, 1.9rem);
+  font-size: clamp(1.15rem, 2.7vh, 1.48rem);
 }
 
 /* Sacred Hindi Tagline: ॥ बाप्पा घर आ रहे हैं ॥ */
 .hindi-tagline {
   font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 3vh, 1.5rem);
+  font-size: clamp(0.95rem, 2.3vh, 1.25rem);
   line-height: 1.25;
   color: #8B1E0F;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.8px;
   font-weight: 700;
-  margin: clamp(2px, 0.4vh, 4px) 0 clamp(16px, 2.8vh, 26px);
+  margin: clamp(2px, 0.4vh, 4px) 0 clamp(12px, 2.2vh, 20px);
   text-shadow: 0 1px 3px rgba(139, 30, 15, 0.16);
 }
 
