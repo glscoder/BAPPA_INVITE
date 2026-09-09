@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (lang && typeof window.setAppLanguage === "function") {
         window.setAppLanguage(lang);
         if (window.sacredAudio) {
-          window.sacredAudio.playTempleBellChime();
+          window.sacredAudio.playSoftTransitionTone();
         }
       }
     });

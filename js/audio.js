@@ -112,6 +112,58 @@ class SacredAudioController {
     }
   }
 
+  /**
+   * Smooth, slow, soothing acoustic tone for language switching
+   */
+  playSoftTransitionTone() {
+    this.initAudioContext();
+    if (!this.audioCtx) return;
+    try {
+      if (this.audioCtx.state === "suspended") {
+        this.audioCtx.resume();
+      }
+      const ctx = this.audioCtx;
+      const now = ctx.currentTime;
+
+      // Master output gain with gentle curve & soft release
+      const masterGain = ctx.createGain();
+      masterGain.gain.setValueAtTime(0.0001, now);
+      masterGain.gain.linearRampToValueAtTime(0.16, now + 0.08); // slow, gentle attack
+      masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2); // smooth, slow decay
+      masterGain.connect(ctx.destination);
+
+      // Low-pass warm acoustic filter
+      const filter = ctx.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.setValueAtTime(750, now);
+      filter.frequency.exponentialRampToValueAtTime(280, now + 1.1);
+      filter.connect(masterGain);
+
+      // Meditative warm chord partials (528Hz & 792Hz)
+      const partials = [
+        { freq: 528, amp: 0.5, decay: 1.2 },
+        { freq: 792, amp: 0.25, decay: 0.9 }
+      ];
+
+      partials.forEach((p) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(p.freq, now);
+
+        gain.gain.setValueAtTime(p.amp, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + p.decay);
+
+        osc.connect(gain);
+        gain.connect(filter);
+        osc.start(now);
+        osc.stop(now + p.decay + 0.1);
+      });
+    } catch (e) {
+      console.warn("Soft transition audio error:", e);
+    }
+  }
+
   start() {
     this.initAudioElement();
     this.playTempleBellChime();
