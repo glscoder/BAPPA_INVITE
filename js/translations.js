@@ -36,12 +36,12 @@ const TRANSLATIONS = {
     event_1_time: "⬥ According to Muhurat",
     event_2_title: "Daily Aarti",
     event_2_date: "Every Day (Sept 14 – Sept 16)",
-    event_2_time: "⬥ Morning Aarti: 10:30 AM | Evening Aarti: 7:30 PM (Followed by Prasad)",
+    event_2_time: "⬥ Morning Aarti: 10:30 AM | Evening Aarti: 9:30 PM (Followed by Prasad)",
     event_3_title: "Darshan & Visiting Hours",
-    event_3_date: "Every Day (Sept 14 – Sept 17)",
+    event_3_date: "Every Day (Sept 14 – Sept 16)",
     event_3_time: "⬥ 10:00 AM to 10:00 PM Daily",
     event_4_title: "Visarjan",
-    event_4_date: "Thursday, September 17, 2026",
+    event_4_date: "Wednesday, September 16, 2026",
     event_4_time: "⬥ According to Muhurat",
 
     // Page 4: Venue & Actions
@@ -110,12 +110,12 @@ const TRANSLATIONS = {
     event_1_time: "⬥ मुहूर्त अनुसार",
     event_2_title: "दैनिक आरती",
     event_2_date: "प्रतिदिन (14 सितम्बर – 16 सितम्बर)",
-    event_2_time: "⬥ प्रातः आरती: 10:30 बजे | सायं आरती: 7:30 बजे (तत्पश्चात प्रसाद)",
+    event_2_time: "⬥ प्रातः आरती: 10:30 बजे | सायं आरती: 9:30 बजे (तत्पश्चात प्रसाद)",
     event_3_title: "दर्शन एवं दर्शन समय",
-    event_3_date: "प्रतिदिन (14 सितम्बर – 17 सितम्बर)",
+    event_3_date: "प्रतिदिन (14 सितम्बर – 16 सितम्बर)",
     event_3_time: "⬥ प्रातः 10:00 से रात्रि 10:00 बजे तक",
     event_4_title: "विसर्जन",
-    event_4_date: "गुरुवार, 17 सितम्बर 2026",
+    event_4_date: "बुधवार, 16 सितम्बर 2026",
     event_4_time: "⬥ मुहूर्त अनुसार",
 
     // Page 4: Venue & Actions
@@ -184,12 +184,12 @@ const TRANSLATIONS = {
     event_1_time: "⬥ મુહૂર્ત અનુસાર",
     event_2_title: "દૈનિક આરતી",
     event_2_date: "દરરોજ (૧૪ સપ્ટેમ્બર – ૧૬ સપ્ટેમ્બર)",
-    event_2_time: "⬥ સવારે: ૧૦:૩૦ વાગ્યે | સાંજે: ૭:૩૦ વાગ્યે (ત્યારબાદ પ્રસાદ)",
+    event_2_time: "⬥ સવારે: ૧૦:૩૦ વાગ્યે | સાંજે: ૯:૩૦ વાગ્યે (ત્યારબાદ પ્રસાદ)",
     event_3_title: "દર્શન સમય",
-    event_3_date: "દરરોજ (૧૪ સપ્ટેમ્બર – ૧૭ સપ્ટેમ્બર)",
+    event_3_date: "દરરોજ (૧૪ સપ્ટેમ્બર – ૧૬ સપ્ટેમ્બર)",
     event_3_time: "⬥ સવારે ૧૦:૦૦ થી રાત્રે ૧૦:૦૦ વાગ્યા સુધી",
     event_4_title: "વિસર્જન",
-    event_4_date: "ગુરુવાર, ૧૭ સપ્ટેમ્બર ૨૦૨૬",
+    event_4_date: "બુધવાર, ૧૬ સપ્ટેમ્બર ૨૦૨૬",
     event_4_time: "⬥ મુહૂર્ત અનુસાર",
 
     // Page 4: Venue & Actions
